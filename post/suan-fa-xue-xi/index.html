@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>算法学习 | 微尘众</title>
+<meta name="description" content="言语道断, 非去来今">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1559405871722">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://weichzh.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://weichzh.github.io">
+        <img src="https://weichzh.github.io/images/avatar.png?v=1559405871722" class="site-logo">
+        <h1 class="site-title">微尘众</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/weichzh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      言语道断, 非去来今
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://weichzh.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">算法学习</h2>
+            <div class="post-date">2019-05-19</div>
+            
+            <div class="post-content">
+              <h1 id="算法入门介绍">算法入门介绍</h1>
+<h2 id="一点感想">一点感想</h2>
+<p>我是真的想学点东西的, 奈何自己现在是真的学不进去. 悲哀啊! 不多说了, 开始写.</p>
+<p>准备用Rust直接写算法.</p>
+<h2 id="算法复杂度分析">算法复杂度分析</h2>
+<h3 id="介绍">介绍</h3>
+<p><a href="https://www.cnblogs.com/gaochundong/p/complexity_of_algorithms.html">Dennis Gao-算法复杂度分析 博客园</a></p>
+<p>这方面的资源非常多, 懒得找了.</p>
+<h2 id="分而治之">分而治之</h2>
+<h3 id="二分查找">二分查找</h3>
+<p>迭代</p>
+<pre><code class="language-Rust">fn binsearch(s: Vec&lt;i32&gt;, x: i32) -&gt; usize {
+    let mut low: usize = 0;
+    let mut high = s.len() - 1;
+    let mut location: usize = 0;
+    while low &lt;= high &amp;&amp; location == 0 {
+        let mid = (low + high) / 2;
+        if x == s[mid] {
+            location = mid + 1;
+        } else if x &lt; s[mid] {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    location
+}
+
+fn main() {
+    println!(&quot;{}&quot;, binsearch(vec![1,3,5,7,9], 5));
+}
+</code></pre>
+<p>递归</p>
+<pre><code class="language-Rust">fn binsearch(s: Vec&lt;i32&gt;, x: i32, mut low: usize,mut high: usize) -&gt; usize {
+    let mid = (low + high) / 2;
+    if x == s[mid] {
+        mid + 1
+    } else if x &lt; s[mid] {
+        high = mid - 1;
+        binsearch(s, x, low, high)
+    } else {
+        low = mid + 1;
+        binsearch(s, x, low, high)
+    }
+}
+
+fn main() {
+    println!(&quot;{}&quot;, binsearch(vec![1,3,5,7,9], 5, 1, 5));
+}
+</code></pre>
+<h3 id="合并排序">合并排序</h3>
+<p>还要修改一番.</p>
+<pre><code class="language-rust">fn mergesort(vector: Vec&lt;i32&gt;) -&gt; Vec&lt;i32&gt; {
+    let mut items = vector.clone();
+    if items.len() &gt; 1 {
+        let middle = items.len() / 2;
+
+        let mut left = Vec::new();
+        for i in 0..middle {
+            left.push(items[i]);
+        }
+
+        let mut right = Vec::new();
+        for i in middle..items.len() {
+            right.push(items[i]);
+        }
+
+        left = mergesort(left);
+        right = mergesort(right);
+
+        let (mut i, mut ii, mut iii) = (0, 0, 0);
+
+        while i &lt; left.len() &amp;&amp; ii &lt; right.len() {
+            if left[i] &lt; right[ii] {
+                items[iii] = left[i];
+                i = i + 1;
+            } else {
+                items[iii] = right[ii];
+                ii = ii + 1;
+            }
+            iii = iii + 1;
+        }
+
+        while i &lt; left.len() {
+            items[iii] = left[i];
+            i = i + 1;
+            iii = iii + 1;
+        }
+
+        while ii &lt; right.len() {
+            items[iii] = right[ii];
+            ii = ii + 1;
+            iii = iii + 1;
+        }
+    }
+    return items;
+}
+
+fn main() {
+    let v = mergesort(vec![6, 5, 7, 11, 3, 2, 7, 9, 1, 11, 5]);
+    for i in 0..v.len()  {
+        print!(&quot;{}, &quot;, v[i]);
+    }
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://weichzh.github.io/tag/suan-fa" class="tag">
+                    算法
+                  </a>
+                
+              </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '485107d1a8adf85f552f',
+        clientSecret: '635ce423ced94323d6c31b9ad7551cb943b804a8',
+        repo: 'weichzh.github.io',
+        owner: 'weichzh',
+        admin: ['weichzh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-05-20T15:46:08.638Z</updated>
+    <updated>2019-06-01T16:17:53.269Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -184,6 +184,119 @@ The subformulas of <span class="katex"><span class="katex-mathml"><math><semanti
 <blockquote>
 <p>不写了, 太累了。。。😂以后扫描上去再OCR, 然后再修改。而且, 汉字写<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>太难受了。半角的dot排版难看, 我用了全角的dot, 然后来回切换。。。简直了。如果将来有精力, 我想将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>语法翻译成汉语, 而且只用中文标点。下一篇讲详细点。</p>
 </blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[算法学习]]></title>
+        <id>https://weichzh.github.io/post/suan-fa-xue-xi</id>
+        <link href="https://weichzh.github.io/post/suan-fa-xue-xi">
+        </link>
+        <updated>2019-05-18T19:04:41.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="算法入门介绍">算法入门介绍</h1>
+<h2 id="一点感想">一点感想</h2>
+<p>我是真的想学点东西的, 奈何自己现在是真的学不进去. 悲哀啊! 不多说了, 开始写.</p>
+<p>准备用Rust直接写算法.</p>
+<h2 id="算法复杂度分析">算法复杂度分析</h2>
+<h3 id="介绍">介绍</h3>
+<p><a href="https://www.cnblogs.com/gaochundong/p/complexity_of_algorithms.html">Dennis Gao-算法复杂度分析 博客园</a></p>
+<p>这方面的资源非常多, 懒得找了.</p>
+<h2 id="分而治之">分而治之</h2>
+<h3 id="二分查找">二分查找</h3>
+<p>迭代</p>
+<pre><code class="language-Rust">fn binsearch(s: Vec&lt;i32&gt;, x: i32) -&gt; usize {
+    let mut low: usize = 0;
+    let mut high = s.len() - 1;
+    let mut location: usize = 0;
+    while low &lt;= high &amp;&amp; location == 0 {
+        let mid = (low + high) / 2;
+        if x == s[mid] {
+            location = mid + 1;
+        } else if x &lt; s[mid] {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    location
+}
+
+fn main() {
+    println!(&quot;{}&quot;, binsearch(vec![1,3,5,7,9], 5));
+}
+</code></pre>
+<p>递归</p>
+<pre><code class="language-Rust">fn binsearch(s: Vec&lt;i32&gt;, x: i32, mut low: usize,mut high: usize) -&gt; usize {
+    let mid = (low + high) / 2;
+    if x == s[mid] {
+        mid + 1
+    } else if x &lt; s[mid] {
+        high = mid - 1;
+        binsearch(s, x, low, high)
+    } else {
+        low = mid + 1;
+        binsearch(s, x, low, high)
+    }
+}
+
+fn main() {
+    println!(&quot;{}&quot;, binsearch(vec![1,3,5,7,9], 5, 1, 5));
+}
+</code></pre>
+<h3 id="合并排序">合并排序</h3>
+<p>还要修改一番.</p>
+<pre><code class="language-rust">fn mergesort(vector: Vec&lt;i32&gt;) -&gt; Vec&lt;i32&gt; {
+    let mut items = vector.clone();
+    if items.len() &gt; 1 {
+        let middle = items.len() / 2;
+
+        let mut left = Vec::new();
+        for i in 0..middle {
+            left.push(items[i]);
+        }
+
+        let mut right = Vec::new();
+        for i in middle..items.len() {
+            right.push(items[i]);
+        }
+
+        left = mergesort(left);
+        right = mergesort(right);
+
+        let (mut i, mut ii, mut iii) = (0, 0, 0);
+
+        while i &lt; left.len() &amp;&amp; ii &lt; right.len() {
+            if left[i] &lt; right[ii] {
+                items[iii] = left[i];
+                i = i + 1;
+            } else {
+                items[iii] = right[ii];
+                ii = ii + 1;
+            }
+            iii = iii + 1;
+        }
+
+        while i &lt; left.len() {
+            items[iii] = left[i];
+            i = i + 1;
+            iii = iii + 1;
+        }
+
+        while ii &lt; right.len() {
+            items[iii] = right[ii];
+            ii = ii + 1;
+            iii = iii + 1;
+        }
+    }
+    return items;
+}
+
+fn main() {
+    let v = mergesort(vec![6, 5, 7, 11, 3, 2, 7, 9, 1, 11, 5]);
+    for i in 0..v.len()  {
+        print!(&quot;{}, &quot;, v[i]);
+    }
+}
+</code></pre>
 ]]></content>
     </entry>
 </feed>
