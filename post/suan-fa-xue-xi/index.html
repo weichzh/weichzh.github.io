@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1559405871722">
+<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1559645334679">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://weichzh.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://weichzh.github.io">
-        <img src="https://weichzh.github.io/images/avatar.png?v=1559405871722" class="site-logo">
+        <img src="https://weichzh.github.io/images/avatar.png?v=1559645334679" class="site-logo">
         <h1 class="site-title">微尘众</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -106,17 +106,24 @@
             <div class="post-date">2019-05-19</div>
             
             <div class="post-content">
-              <h1 id="算法入门介绍">算法入门介绍</h1>
+              <p>学习, 学个屁!!!</p>
+<!-- more -->
+<h1 id="算法学习入门">算法学习入门</h1>
 <h2 id="一点感想">一点感想</h2>
 <p>我是真的想学点东西的, 奈何自己现在是真的学不进去. 悲哀啊! 不多说了, 开始写.</p>
-<p>准备用Rust直接写算法.</p>
+<p>准备用Rust直接写算法, 按照算法基础 [Foundations Of Algorithms - Richard E. Neapolitan, Fifth Edition] 提供的顺序写. 不推荐这本书, 虽然叫基础, 但感觉不是很适合初学者(跟基础物理学一样😂)...</p>
+<p>完全可以只看下面的链接, 虽然是繁体, 总比英文好读.</p>
+<p><a href="https://rust-algo.club/">Rust Algorithm Club</a></p>
+<p>还有这个算法图形化, 非常好, 还有中文.</p>
+<p><a href="https://visualgo.net/zh">visualgo</a></p>
 <h2 id="算法复杂度分析">算法复杂度分析</h2>
 <h3 id="介绍">介绍</h3>
 <p><a href="https://www.cnblogs.com/gaochundong/p/complexity_of_algorithms.html">Dennis Gao-算法复杂度分析 博客园</a></p>
-<p>这方面的资源非常多, 懒得找了.</p>
+<p><a href="http://bigocheatsheet.com/">大O法快查表</a></p>
+<p>这方面的资源非常多, 懒得再找了.</p>
 <h2 id="分而治之">分而治之</h2>
 <h3 id="二分查找">二分查找</h3>
-<p>迭代</p>
+<p>迭代 (Buttom-up)</p>
 <pre><code class="language-Rust">fn binsearch(s: Vec&lt;i32&gt;, x: i32) -&gt; usize {
     let mut low: usize = 0;
     let mut high = s.len() - 1;
@@ -138,7 +145,7 @@ fn main() {
     println!(&quot;{}&quot;, binsearch(vec![1,3,5,7,9], 5));
 }
 </code></pre>
-<p>递归</p>
+<p>递归 (Top-down)</p>
 <pre><code class="language-Rust">fn binsearch(s: Vec&lt;i32&gt;, x: i32, mut low: usize,mut high: usize) -&gt; usize {
     let mid = (low + high) / 2;
     if x == s[mid] {
@@ -157,60 +164,172 @@ fn main() {
 }
 </code></pre>
 <h3 id="合并排序">合并排序</h3>
-<p>还要修改一番.</p>
-<pre><code class="language-rust">fn mergesort(vector: Vec&lt;i32&gt;) -&gt; Vec&lt;i32&gt; {
-    let mut items = vector.clone();
-    if items.len() &gt; 1 {
-        let middle = items.len() / 2;
+<p>具体介绍可以看<a href="https://zh.wikipedia.org/wiki/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F">归并排序</a></p>
+<p>迭代</p>
+<pre><code class="language-rust">use std::cmp::min;
 
-        let mut left = Vec::new();
-        for i in 0..middle {
-            left.push(items[i]);
-        }
-
-        let mut right = Vec::new();
-        for i in middle..items.len() {
-            right.push(items[i]);
-        }
-
-        left = mergesort(left);
-        right = mergesort(right);
-
-        let (mut i, mut ii, mut iii) = (0, 0, 0);
-
-        while i &lt; left.len() &amp;&amp; ii &lt; right.len() {
-            if left[i] &lt; right[ii] {
-                items[iii] = left[i];
-                i = i + 1;
-            } else {
-                items[iii] = right[ii];
-                ii = ii + 1;
+pub fn merge_sort(vector: &amp;mut [i32]) {
+    let mut width = 1;
+    let mut items = vector.to_vec();
+    let len = vector.len();
+    while width &lt; len {
+        let mut i = 0;
+        while i &lt; len {
+            let upper = min(i + 2 * width, len);
+            let mid = min(i + width, len);
+            let (mut left, mut right, mut index) = (0,0,0);
+            let left_vec = &amp;vector[i..mid];
+            let right_vec = &amp;vector[mid..upper];
+            let mid_items = &amp;mut items[i..upper];
+            while left &lt; left_vec.len() &amp;&amp; right &lt; right_vec.len() {
+                if left_vec[left] &lt;= right_vec[right] {
+                    mid_items[index] = left_vec[left];
+                    left += 1;
+                } else {
+                    mid_items[index] = right_vec[right];
+                    right += 1;
+                }
+                index += 1;
             }
-            iii = iii + 1;
+            if left &lt; left_vec.len() {
+                mid_items[index..].copy_from_slice(&amp;left_vec[left..]);
+            }
+            if right &lt; right_vec.len() {
+                mid_items[index..].copy_from_slice(&amp;right_vec[right..]);
+            }
+            vector[i..upper].copy_from_slice(&amp;items[i..upper]);
+            i += 2 * width;
         }
-
-        while i &lt; left.len() {
-            items[iii] = left[i];
-            i = i + 1;
-            iii = iii + 1;
-        }
-
-        while ii &lt; right.len() {
-            items[iii] = right[ii];
-            ii = ii + 1;
-            iii = iii + 1;
-        }
+        width *= 2;
     }
-    return items;
 }
 
+
 fn main() {
-    let v = mergesort(vec![6, 5, 7, 11, 3, 2, 7, 9, 1, 11, 5]);
-    for i in 0..v.len()  {
+    let mut v = [6, 5, 7, 11, 3, 2, 7, 9, 1, 11, 5].to_vec();
+    merge_sort(&amp;mut v);
+    for i in 0..v.len() {
         print!(&quot;{}, &quot;, v[i]);
     }
 }
 </code></pre>
+<p>递归(懒得写了, 抄了一份. 迭代会了, 递归就简单了)</p>
+<pre><code class="language-rust">pub fn merge_sort(arr: &amp;mut [i32]) {
+    let mid = arr.len() / 2;
+    if mid == 0 {                 // 1
+        return;
+    }
+
+    mergesort(&amp;mut arr[..mid]);   // 2
+    mergesort(&amp;mut arr[mid..]);
+
+    // Create an array to store intermediate result.
+    let mut ret = arr.to_vec();   // 3
+
+    // Merge the two piles.
+    merge(&amp;arr[..mid], &amp;arr[mid..], &amp;mut ret[..]);  // 4
+
+    // Copy back the result back to original array.
+    arr.copy_from_slice(&amp;ret);    // 5
+}
+
+fn merge(arr1: &amp;[i32], arr2: &amp;[i32], ret: &amp;mut [i32]) {
+    let mut left = 0; // Head of left pile.             // 1
+    let mut right = 0; // Head of right pile.
+    let mut index = 0;
+
+    // Compare element and insert back to result array.
+    while left &lt; arr1.len() &amp;&amp; right &lt; arr2.len() {     // 2
+        if arr1[left] &lt;= arr2[right] {                  // 3
+            ret[index] = arr1[left];
+            index += 1;
+            left += 1;
+        } else {
+            ret[index] = arr2[right];
+            index += 1;
+            right += 1;
+        }
+    }
+
+    // Copy the reset elements to returned array.
+    // `memcpy` may be more performant than for-loop assignment.
+    if left &lt; arr1.len() {                              // 4
+        ret[index..].copy_from_slice(&amp;arr1[left..]);
+    }
+    if right &lt; arr2.len() {
+        ret[index..].copy_from_slice(&amp;arr2[right..]);
+    }
+}
+
+fn main() {
+    let mut v = [6, 5, 7, 11, 3, 2, 7, 9, 1, 11, 5].to_vec();
+    merge_sort(&amp;mut v);
+    for i in 0..v.len() {
+        print!(&quot;{}, &quot;, v[i]);
+    }
+}
+</code></pre>
+<h3 id="快速排序分割交换排序">快速排序(分割交换排序)</h3>
+<p>迭代</p>
+<pre><code class="language-rust">fn quick_sort(vector: &amp;mut [i32]) {
+    let mut low: usize = 0;
+    let high: usize = vector.len();
+    while low &lt; high {
+        let pivot_point = low;
+        for index in low + 1..high {
+            if vector[index] &lt; vector[pivot_point] {
+                vector.swap(index, pivot_point);
+            }
+        }
+        low += 1;
+    }
+}
+
+fn main() {
+    let mut v = [15, 22, 13, 27, 12, 10, 20, 25];
+    quick_sort(&amp;mut v);
+    for i in 0..v.len() {
+        print!(&quot;{}, &quot;, v[i]);
+    }
+}
+</code></pre>
+<p>递归</p>
+<pre><code class="language-rust">pub fn quick_sort(low: usize, high: usize, vector: &amp;mut [i32]) {
+    let mut pivot_point: usize = 0;
+    if low &lt; high {
+        partition(low, high, &amp;mut pivot_point, vector);
+        quick_sort(low, pivot_point, vector);
+        quick_sort(pivot_point + 1, high, vector);
+    }
+}
+
+fn partition(low: usize, high: usize, pivot_point:&amp;mut usize, vector: &amp;mut [i32]) {
+    let pivot_item = vector[low];
+    let mut j = low;
+    for i in low + 1..high {
+        if vector[i] &lt; pivot_item {
+            j += 1;
+           vector.swap(i, j);
+        }
+    }
+    *pivot_point = j;
+    vector.swap(*pivot_point, low);
+}
+
+fn main() {
+    let mut v = [15, 22, 13, 27, 12, 10, 20, 25];
+    quick_sort(0,8,&amp;mut v);
+    for i in 0..v.len() {
+        print!(&quot;{}, &quot;, v[i]);
+    }
+}
+</code></pre>
+<h3 id="strassen-矩阵乘法算法">Strassen 矩阵乘法算法</h3>
+<p>这玩意儿就不写了吧...</p>
+<h3 id="大整数的算数运算">大整数的算数运算</h3>
+<p>懒得写了.</p>
+<h2 id="练习">练习</h2>
+<p>略</p>
 
             </div>
             
