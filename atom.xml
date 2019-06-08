@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-06-04T10:51:23.187Z</updated>
+    <updated>2019-06-08T10:31:20.440Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://weichzh.github.io/images/avatar.png</logo>
     <icon>https://weichzh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 微尘众</rights>
+    <entry>
+        <title type="html"><![CDATA[leetcode-as-rust]]></title>
+        <id>https://weichzh.github.io/post/leetcode-as-rust</id>
+        <link href="https://weichzh.github.io/post/leetcode-as-rust">
+        </link>
+        <updated>2019-06-08T10:28:33.000Z</updated>
+        <summary type="html"><![CDATA[<p>立一个flag</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>立一个flag</p>
+<!-- more -->
+<p><a href="https://github.com/weichzh/leetcode-as-rust">https://github.com/weichzh/leetcode-as-rust</a></p>
+<h1 id="leetcode-as-rust">leetcode-as-rust</h1>
+<p>我居然用Rust入门...(误</p>
+<ol>
+<li>推荐用IDEA, 功能齐全, 补全也很舒服, 直接运行test就行了. 当然vscode也行, rls插件很好用, 但我这里补全很丑;</li>
+<li>rust要用nightly版本, 不然会报错--2019/6/8;</li>
+<li>记得lib.rs, Cargo.toml的内容要更新;</li>
+<li>建议建立一个模板, 如下:</li>
+</ol>
+<pre><code class="language-rust">impl Solution {
+
+}
+
+pub struct Solution;
+
+#[cfg(test)]
+mod test {
+    use super::Solution;
+    
+    #[test]
+    fn test() {
+
+    }
+}
+</code></pre>
+<p>推荐几个老哥的</p>
+<p><a href="https://github.com/Aloxaf/LeetCode-Rust">https://github.com/Aloxaf/LeetCode-Rust</a></p>
+<p><a href="https://github.com/aylei/leetcode-rust">https://github.com/aylei/leetcode-rust</a></p>
+<p><a href="https://github.com/cch123/leetcode-rust">https://github.com/cch123/leetcode-rust</a></p>
+<p><a href="https://github.com/iosmanthus/leetcode-rust">https://github.com/iosmanthus/leetcode-rust</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[命题逻辑笔记]]></title>
         <id>https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji</id>

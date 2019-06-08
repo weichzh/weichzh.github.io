@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | 微尘众</title>
+<title>leetcode-as-rust | 微尘众</title>
 <meta name="description" content="言语道断, 非去来今">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://weichzh.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -95,50 +101,66 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
+          <div class="post-detail">
+            <h2 class="post-title">leetcode-as-rust</h2>
+            <div class="post-date">2019-06-08</div>
+            
+            <div class="post-content">
+              <p>立一个flag</p>
+<!-- more -->
+<p><a href="https://github.com/weichzh/leetcode-as-rust">https://github.com/weichzh/leetcode-as-rust</a></p>
+<h1 id="leetcode-as-rust">leetcode-as-rust</h1>
+<p>我居然用Rust入门...(误</p>
+<ol>
+<li>推荐用IDEA, 功能齐全, 补全也很舒服, 直接运行test就行了. 当然vscode也行, rls插件很好用, 但我这里补全很丑;</li>
+<li>rust要用nightly版本, 不然会报错--2019/6/8;</li>
+<li>记得lib.rs, Cargo.toml的内容要更新;</li>
+<li>建议建立一个模板, 如下:</li>
+</ol>
+<pre><code class="language-rust">impl Solution {
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+}
+
+pub struct Solution;
+
+#[cfg(test)]
+mod test {
+    use super::Solution;
+    
+    #[test]
+    fn test() {
+
+    }
+}
+</code></pre>
+<p>推荐几个老哥的</p>
+<p><a href="https://github.com/Aloxaf/LeetCode-Rust">https://github.com/Aloxaf/LeetCode-Rust</a></p>
+<p><a href="https://github.com/aylei/leetcode-rust">https://github.com/aylei/leetcode-rust</a></p>
+<p><a href="https://github.com/cch123/leetcode-rust">https://github.com/cch123/leetcode-rust</a></p>
+<p><a href="https://github.com/iosmanthus/leetcode-rust">https://github.com/iosmanthus/leetcode-rust</a></p>
+
+            </div>
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2019</h2>
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji">
+                  <h3 class="post-title">
+                    命题逻辑笔记
+                  </h3>
+                </a>
+              </div>
+            
+
+            
               
-                
-                  <article class="post">
-                    <a href="https://weichzh.github.io/post/leetcode-as-rust">
-                      <h2 class="post-title">
-                        leetcode-as-rust
-                      </h2>
-                    </a>
-                  </article>
-                
+                <div id="gitalk-container" data-aos="fade-in"></div>
               
-                
-                  <article class="post">
-                    <a href="https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji">
-                      <h2 class="post-title">
-                        命题逻辑笔记
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://weichzh.github.io/post/suan-fa-xue-xi">
-                      <h2 class="post-title">
-                        算法学习
-                      </h2>
-                    </a>
-                  </article>
-                
+
               
             
+
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
 
         </div>
       </div>
@@ -160,6 +182,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '485107d1a8adf85f552f',
+        clientSecret: '635ce423ced94323d6c31b9ad7551cb943b804a8',
+        repo: 'weichzh.github.io',
+        owner: 'weichzh',
+        admin: ['weichzh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
