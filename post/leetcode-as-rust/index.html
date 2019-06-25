@@ -1,185 +1,108 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-      
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>微尘众</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+<meta charset="utf-8" >
 
-<meta name="description" content="言语道断, 非去来今"/>
-<meta name="keywords" content="言语道断, 非去来今"/>
+<title>leetcode-as-rust | 微尘众</title>
+<meta name="description" content="言语道断, 非去来今">
 
-<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
-<link rel="stylesheet" href="https://weichzh.github.io/styles/main.css">
-<!--Math render-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1561437220882">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-
-<!-- Modernizr JS -->
-<script src="https://weichzh.github.io/media/scripts/_vendors/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-<scripts src="https://weichzh.github.io/media/scripts/_vendors/respond.min.js"></scripts>
-<![endif]-->
-
-<!-- Comment -->
-
-    
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-    
-
-    
+<link rel="stylesheet" href="https://weichzh.github.io/styles/main.css">
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/tomorrow-night.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-<link crossorigin="anonymous" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" href="https://lib.baomitu.com/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
 
   </head>
   <body>
-  
-<div id="fh5co-offcanvas">
-    <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
-        <span><i class="icon-cross3"></i> <span>Close</span></span>
-    </a>
-    <div class="fh5co-bio">
-        <figure>
-            <img src="https://weichzh.github.io/media/images/avatar.png" alt="微尘众" class="img-responsive">
-        </figure>
-        <h3 class="heading">ABOUT ME</h3>
-        <h2>微尘众</h2>
-        <p>言语道断, 非去来今</p>
-        <ul class="fh5co-social">
-            
-                <li>
-                    
-                        <a href="https://github.io/weichzh" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-        </ul>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://weichzh.github.io">
+        <img class="avatar" src="https://weichzh.github.io/images/avatar.png?v=1561437220882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://weichzh.github.io">
+        <h1 class="site-title">微尘众</h1>
+      </a>
     </div>
-
-    <div class="fh5co-menu">
-        <div class="fh5co-box">
-            <h3 class="heading">搜索</h3>
-            <form action="#">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="输入关键字">
-                </div>
-            </form>
-        </div>
-        <div class="fh5co-box">
-            <h3 class="heading">标签</h3>
-            <ul>
-                
-                    <li><a href="https://weichzh.github.io/tag/suan-fa">算法</a></li>
-                
-                    <li><a href="https://weichzh.github.io/tag/b3bQGW3Z1">逻辑</a></li>
-                
-            </ul>
-        </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
+  </div>
 </div>
 
-<header id="fh5co-header">
-    <div class="container-fluid">
-        <div class="row">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-            <ul class="fh5co-social">
-                
-                    <li>
-                        <a href="/"
-                        
-                           target="_blank"
-                                 >
-                            首页
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/archives"
-                        
-                           target="_blank"
-                                 >
-                            归档
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags"
-                        
-                           target="_blank"
-                                 >
-                            标签
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/post/about"
-                        
-                           target="_blank"
-                                 >
-                            关于
-                        </a>
-                    </li>
-                
-            </ul>
-            <div class="col-lg-12 col-md-12 text-center">
-                <h1 id="fh5co-logo">
-                    <a href="https://weichzh.github.io">微尘众</a>
-                </h1>
-            </div>
-        </div>
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a class="menu purple-link" href="/" class="menu" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="/archives" class="menu" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="/tags" class="menu" target="_blank">
+            标签
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="/post/about" class="menu" target="_blank">
+            关于
+          </a>
+        
+      
     </div>
-</header>
+  </div>
+</transition>
 
 
-<!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
-<!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
-
-  <div class="container-fluid">
-      <div class="row fh5co-post-entry single-entry">
-          <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
-              <figure class="animate-box">
-                  
-              </figure>
-              <span class="fh5co-meta animate-box">
-                  
-                      <div class="tag-container">
-                          
-                              <a href="https://weichzh.github.io/tag/suan-fa" class="tag">算法, </a>
-                          
-                      </div>
-                  
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">leetcode-as-rust</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-06-08</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://weichzh.github.io/tag/suan-fa">
+                    算法
+                    
+                  </a>
+                
               </span>
-              <h2 class="fh5co-article-title animate-box">leetcode-as-rust</h2>
-              <span class="fh5co-meta fh5co-date animate-box">2019-06-08</span>
-
-              <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
-                  <div class="row">
-                      <div class="col-md-12 animate-box post-content">
-                          <p> <p>立一个flag (failed)</p>
+            
+          </div>
+          <div class="post-content">
+            <p>立一个flag (failed)</p>
 <!-- more -->
 <p><a href="https://github.com/weichzh/leetcode-as-rust">https://github.com/weichzh/leetcode-as-rust</a></p>
 <h1 id="leetcode-as-rust">leetcode-as-rust</h1>
@@ -210,88 +133,88 @@ mod test {
 <p><a href="https://github.com/aylei/leetcode-rust">https://github.com/aylei/leetcode-rust</a></p>
 <p><a href="https://github.com/cch123/leetcode-rust">https://github.com/cch123/leetcode-rust</a></p>
 <p><a href="https://github.com/iosmanthus/leetcode-rust">https://github.com/iosmanthus/leetcode-rust</a></p>
- </p>
-                      </div>
-                  </div>
 
-                  <div class="row">
-                      <div class="col-md-12 animate-box">
-                          
-                              <div class="next-post">
-                                  <div class="next">下一篇</div>
-                                  <a href="https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji">
-                                      <h3 class="post-title">
-                                          命题逻辑笔记
-                                      </h3>
-                                  </a>
-                              </div>
-                          
-                      </div>
-                  </div>
+          </div>
+        </div>
 
-                  <div class="row">
-                      <div class="col-md-12 animate-box">
-                          
-                              
-                                  <div id="gitalk-container"></div>
-                              
-
-                              
-                          
-                      </div>
-                  </div>
-              </div>
-
-          </article>
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji">
+              <h3 class="post-title">
+                下一篇：命题逻辑笔记
+              </h3>
+            </a>
+          </div>
+          
       </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">言语道断, 非去来今</div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/weichzh" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
-
-    
-<footer id="fh5co-footer">
-  <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
-</footer>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://weichzh.github.io/atom.xml" target="_blank">RSS</a>
+</div>
 
 
-    
-<!-- jQuery -->
-<script src="https://weichzh.github.io/media/scripts/_vendors/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="https://weichzh.github.io/media/scripts/_vendors/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="https://weichzh.github.io/media/scripts/_vendors/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="https://weichzh.github.io/media/scripts/_vendors/jquery.waypoints.min.js"></script>
-<!-- Main JS -->
-<script src="https://weichzh.github.io/media/scripts/_vendors/main.js"></script>
-<!-- Md5 Min JS -->
-<script src="https://weichzh.github.io/media/scripts/_vendors/md5.min.js"></script>
+    </div>
+    <script type="application/javascript">
 
-<script type="application/javascript">
-    hljs.initHighlightingOnLoad();
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
 
 
-    
-        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-        <script>
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
 
-            var gitalk = new Gitalk({
-                clientID: '485107d1a8adf85f552f',
-                clientSecret: '635ce423ced94323d6c31b9ad7551cb943b804a8',
-                repo: 'weichzh.github.io',
-                owner: 'weichzh',
-                admin: ['weichzh'],
-                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
-                distractionFreeMode: false  // Facebook-like distraction free mode
-            })
+      var gitalk = new Gitalk({
+        clientID: '485107d1a8adf85f552f',
+        clientSecret: '635ce423ced94323d6c31b9ad7551cb943b804a8',
+        repo: 'weichzh.github.io',
+        owner: 'weichzh',
+        admin: ['weichzh'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
 
-            gitalk.render('gitalk-container')
+      gitalk.render('gitalk-container')
 
-        </script>
-    
+    </script>
+  
 
-    
+  
 
 
 
