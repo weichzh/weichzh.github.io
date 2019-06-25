@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-06-08T10:33:04.619Z</updated>
+    <updated>2019-06-25T03:43:47.442Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -16,13 +16,12 @@
         <link href="https://weichzh.github.io/post/leetcode-as-rust">
         </link>
         <updated>2019-06-08T10:28:33.000Z</updated>
-        <summary type="html"><![CDATA[<p>立一个flag</p>
+        <summary type="html"><![CDATA[<p>立一个flag (failed)</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>立一个flag</p>
+        <content type="html"><![CDATA[<p>立一个flag (failed)</p>
 <!-- more -->
 <p><a href="https://github.com/weichzh/leetcode-as-rust">https://github.com/weichzh/leetcode-as-rust</a></p>
 <h1 id="leetcode-as-rust">leetcode-as-rust</h1>
-<p>我居然用Rust入门...(误</p>
 <ol>
 <li>推荐用IDEA, 功能齐全, 补全也很舒服, 直接运行test就行了. 当然vscode也行, rls插件很好用, 但我这里补全很丑;</li>
 <li>rust要用nightly版本, 不然会报错--2019/6/8;</li>
