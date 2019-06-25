@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>命题逻辑笔记 | 微尘众</title>
 <meta name="description" content="言语道断, 非去来今">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1561437424600">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1561437220882">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://weichzh.github.io/styles/main.css">
 
@@ -23,86 +21,84 @@
 
   
 
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://weichzh.github.io">
-        <img class="avatar" src="https://weichzh.github.io/images/avatar.png?v=1561437220882" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://weichzh.github.io">
-        <h1 class="site-title">微尘众</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://weichzh.github.io">微尘众</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu" target="_blank">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu" target="_blank">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu" target="_blank">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
+</nav>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a class="menu purple-link" href="/" class="menu" target="_blank">
-            首页
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/archives" class="menu" target="_blank">
-            归档
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/tags" class="menu" target="_blank">
-            标签
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/post/about" class="menu" target="_blank">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">命题逻辑笔记</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-05-19</span>
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>命题逻辑笔记</h1>
+            <p class="article-meta">
+              2019-05-19
+              
+                <a href="https://weichzh.github.io/tag/b3bQGW3Z1" class="badge ">
+                  逻辑
+                </a>
+              
+            </p>
             
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://weichzh.github.io/tag/b3bQGW3Z1">
-                    逻辑
-                    
-                  </a>
-                
-              </span>
-            
-          </div>
-          <div class="post-content">
-            <h1 id="命题逻辑">命题逻辑</h1>
+            <div class="post-content">
+              <h1 id="命题逻辑">命题逻辑</h1>
 <h2 id="概念">概念</h2>
 <h3 id="命题proposition">命题[proposition]</h3>
 <p>能判断真假的陈述句.</p>
@@ -271,62 +267,115 @@ The subformulas of <span class="katex"><span class="katex-mathml"><math><semanti
 <p>不写了, 太累了。。。😂以后扫描上去再OCR, 然后再修改。而且, 汉字写<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>太难受了。半角的dot排版难看, 我用了全角的dot, 然后来回切换。。。简直了。如果将来有精力, 我想将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>语法翻译成汉语, 而且只用中文标点。下一篇讲详细点。</p>
 </blockquote>
 
-          </div>
+            </div>
+          </article>
         </div>
-
-        
-          <div class="next-post">
-            <a class="purple-link" href="https://weichzh.github.io/post/suan-fa-xue-xi">
-              <h3 class="post-title">
-                下一篇：算法学习
-              </h3>
-            </a>
-          </div>
+        <div class="paper" data-aos="fade-in">
           
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://weichzh.github.io/post/suan-fa-xue-xi">
+                <h3 class="post-title">
+                  算法学习
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
       </div>
 
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://weichzh.github.io/images/avatar.png?v=1561437424600" class="no-responsive avatar">
+    <div class="text-muted">言语道断, 非去来今</div>
+    <div class="social-container">
       
         
-          <div id="gitalk-container"></div>
-        
-
+          <a href="https://github.com/weichzh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
         
       
-
-      <div class="site-footer">
-  <div class="slogan">言语道断, 非去来今</div>
-  <div class="social-container">
-    
+        
       
-        <a href="https://github.com/weichzh" target="_blank">
-          <i class="fab fa-github"></i>
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://weichzh.github.io/post/leetcode-as-rust">leetcode-as-rust</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji">命题逻辑笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://weichzh.github.io/post/suan-fa-xue-xi">算法学习</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://weichzh.github.io/tag/suan-fa" class="badge warning">
+          算法
         </a>
       
-    
+        <a href="https://weichzh.github.io/tag/b3bQGW3Z1" class="badge secondary">
+          逻辑
+        </a>
       
-    
-      
-    
-      
-    
-      
-    
+    </div>
   </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://weichzh.github.io/atom.xml" target="_blank">RSS</a>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://weichzh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
 </div>
 
 
     </div>
-    <script type="application/javascript">
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
 
 hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
 </script>
 

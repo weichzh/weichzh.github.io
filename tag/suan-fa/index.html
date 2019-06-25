@@ -1,188 +1,224 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>算法 | 微尘众</title>
 <meta name="description" content="言语道断, 非去来今">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1561437424600">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1561437220882">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://weichzh.github.io/styles/main.css">
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://weichzh.github.io">
-        <img class="avatar" src="https://weichzh.github.io/images/avatar.png?v=1561437220882" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://weichzh.github.io">
-        <h1 class="site-title">微尘众</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://weichzh.github.io">微尘众</a></h3>
   </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
         
-          <a class="menu purple-link" href="/" class="menu" target="_blank">
-            首页
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/archives" class="menu" target="_blank">
-            归档
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/tags" class="menu" target="_blank">
-            标签
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/post/about" class="menu" target="_blank">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> 算法
-          </h2> 
-        </div>
-
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://weichzh.github.io/post/leetcode-as-rust">
-        <h2 class="post-title">leetcode-as-rust</h2>
-      </a>
-      <div class="post-abstract">
-        <p>立一个flag (failed)</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-06-08</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
+          <li>
             
-              <a href="https://weichzh.github.io/tag/suan-fa">
-                算法
-                
+              <a href="/" class="menu" target="_blank">
+                首页
               </a>
             
-          </span>
+          </li>
         
-      </div>
-    </div>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://weichzh.github.io/post/suan-fa-xue-xi">
-        <h2 class="post-title">算法学习</h2>
-      </a>
-      <div class="post-abstract">
-        <p>学习, 学个屁!!!</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-05-19</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
+          <li>
             
-              <a href="https://weichzh.github.io/tag/suan-fa">
-                算法
-                
+              <a href="/archives" class="menu" target="_blank">
+                归档
               </a>
             
-          </span>
+          </li>
         
-      </div>
+          <li>
+            
+              <a href="/tags" class="menu" target="_blank">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu" target="_blank">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
     </div>
-    
-  </section>
+  </div>
+</nav>
 
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">言语道断, 非去来今</div>
-  <div class="social-container">
-    
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <h2 class="current-tag">标签: 算法</h2>
+          
+  <article class="article">
+    <h2 class="article-title">
+      <a href="https://weichzh.github.io/post/leetcode-as-rust">leetcode-as-rust</a>
+    </h2>
+    <p class="article-meta">
+      2019-06-08
       
-        <a href="https://github.com/weichzh" target="_blank">
-          <i class="fab fa-github"></i>
+        <a href="https://weichzh.github.io/tag/suan-fa" class="badge secondary">
+          算法
         </a>
       
-    
+    </p>
+    <p class="text-lead">
+      <p>立一个flag (failed)</p>
+
+    </p>
+    <div class="row">
+      <a href="https://weichzh.github.io/post/leetcode-as-rust" class="readmore-link">
+        <button>
+          Read More
+        </button>
+      </a>
+    </div>
+  </article>
+
+  <article class="article">
+    <h2 class="article-title">
+      <a href="https://weichzh.github.io/post/suan-fa-xue-xi">算法学习</a>
+    </h2>
+    <p class="article-meta">
+      2019-05-19
       
-    
+        <a href="https://weichzh.github.io/tag/suan-fa" class="badge secondary">
+          算法
+        </a>
       
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://weichzh.github.io/atom.xml" target="_blank">RSS</a>
+    </p>
+    <p class="text-lead">
+      <p>学习, 学个屁!!!</p>
+
+    </p>
+    <div class="row">
+      <a href="https://weichzh.github.io/post/suan-fa-xue-xi" class="readmore-link">
+        <button>
+          Read More
+        </button>
+      </a>
+    </div>
+  </article>
+
+
+        </div>
+        <div class="row flex-edges">
+  
+  
 </div>
 
+      </div>
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://weichzh.github.io/images/avatar.png?v=1561437424600" class="no-responsive avatar">
+    <div class="text-muted">言语道断, 非去来今</div>
+    <div class="social-container">
+      
+        
+          <a href="https://github.com/weichzh" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://weichzh.github.io/post/leetcode-as-rust">leetcode-as-rust</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji">命题逻辑笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://weichzh.github.io/post/suan-fa-xue-xi">算法学习</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://weichzh.github.io/tag/suan-fa" class="badge secondary">
+          算法
+        </a>
+      
+        <a href="https://weichzh.github.io/tag/b3bQGW3Z1" class="badge success">
+          逻辑
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://weichzh.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
 
     </div>
-    <script type="application/javascript">
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
 
 hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
 </script>
 
