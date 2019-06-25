@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-06-25T05:34:45.133Z</updated>
+    <updated>2019-06-25T05:36:59.872Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2019, 微尘众</rights>
     <entry>
         <title type="html"><![CDATA[语法高亮检测]]></title>
-        <id>https://weichzh.github.io/post/_Aiz_7hq0</id>
-        <link href="https://weichzh.github.io/post/_Aiz_7hq0">
+        <id>https://weichzh.github.io/post/yu-fa-gao-liang</id>
+        <link href="https://weichzh.github.io/post/yu-fa-gao-liang">
         </link>
         <updated>2019-06-25T04:54:53.000Z</updated>
         <content type="html"><![CDATA[<pre><code class="language-C">#include  &lt;stdio.h&gt;
