@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-08-19T12:30:36.887Z</updated>
+    <updated>2019-09-17T03:17:39.912Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -49,8 +49,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[语法高亮检测]]></title>
-        <id>https://weichzh.github.io/post/yu-fa-gao-liang</id>
-        <link href="https://weichzh.github.io/post/yu-fa-gao-liang">
+        <id>https://weichzh.github.io/post/Je7qTbJf_</id>
+        <link href="https://weichzh.github.io/post/Je7qTbJf_">
         </link>
         <updated>2019-06-25T04:54:53.000Z</updated>
         <content type="html"><![CDATA[<pre><code class="language-C">#include  &lt;stdio.h&gt;
@@ -84,8 +84,8 @@ echo &quot;Hello world!&quot;
     </entry>
     <entry>
         <title type="html"><![CDATA[leetcode-as-rust]]></title>
-        <id>https://weichzh.github.io/post/leetcode-as-rust</id>
-        <link href="https://weichzh.github.io/post/leetcode-as-rust">
+        <id>https://weichzh.github.io/post/e2etKCBJ9</id>
+        <link href="https://weichzh.github.io/post/e2etKCBJ9">
         </link>
         <updated>2019-06-08T10:28:33.000Z</updated>
         <summary type="html"><![CDATA[<p>立一个flag (failed)</p>
@@ -125,8 +125,8 @@ mod test {
     </entry>
     <entry>
         <title type="html"><![CDATA[命题逻辑笔记]]></title>
-        <id>https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji</id>
-        <link href="https://weichzh.github.io/post/ming-ti-luo-ji-bi-ji">
+        <id>https://weichzh.github.io/post/3z-IY_Jl5</id>
+        <link href="https://weichzh.github.io/post/3z-IY_Jl5">
         </link>
         <updated>2019-05-18T19:04:41.000Z</updated>
         <summary type="html"><![CDATA[<p>《数理逻辑引论》- 冯琦</p>
@@ -305,8 +305,8 @@ The subformulas of <span class="katex"><span class="katex-mathml"><math><semanti
     </entry>
     <entry>
         <title type="html"><![CDATA[算法学习--分而治之]]></title>
-        <id>https://weichzh.github.io/post/suan-fa-xue-xi</id>
-        <link href="https://weichzh.github.io/post/suan-fa-xue-xi">
+        <id>https://weichzh.github.io/post/EDhrQDYCy</id>
+        <link href="https://weichzh.github.io/post/EDhrQDYCy">
         </link>
         <updated>2019-05-18T19:04:41.000Z</updated>
         <summary type="html"><![CDATA[<p>学习, 学个屁!!!</p>
