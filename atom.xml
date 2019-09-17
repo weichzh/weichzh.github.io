@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-09-17T03:17:39.912Z</updated>
+    <updated>2019-09-17T04:21:07.335Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -10,6 +10,65 @@
     <logo>https://weichzh.github.io/images/avatar.png</logo>
     <icon>https://weichzh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 微尘众</rights>
+    <entry>
+        <title type="html"><![CDATA[将archlinux装进U盘(笔记本双显卡）]]></title>
+        <id>https://weichzh.github.io/post/oOl0PTJoX</id>
+        <link href="https://weichzh.github.io/post/oOl0PTJoX">
+        </link>
+        <updated>2019-09-17T03:19:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>搞了好几天，差不多能用了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>搞了好几天，差不多能用了。</p>
+<!-- more -->
+<h2 id="安装前">安装前</h2>
+<p>第一次用的ubuntu+gnome，巨卡无比，搞不好就崩溃一次。我以为是Nvidia显卡问题，结果换了闭源的驱动不容易崩溃了，但照卡不误。后来想用manjaro，但manjaro的显卡问题依旧，找了一圈决定选deepin尝鲜。</p>
+<p>deepin是真尼玛漂亮啊，可惜软件仓库里很多都不更新了，gcc似乎还是4.6的版本，而且问题也很多，关不了机。。。但是实在不舍得deepin的桌面，心一横，直接上archlinux。</p>
+<p>archlinux的安装过程我还记得一点，照着wiki和几篇博文就开始了。</p>
+<p><a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">archwiki安装指南</a></p>
+<p><a href="https://www.jianshu.com/p/7c78dc4c53e5">Arch Linux 安装指南---简书</a></p>
+<p><a href="http://www.carrotchou.blog/122.html">虚拟机</a></p>
+<p><a href="http://blog.ccyg.studio/article/4f6cfa0a-ad98-4adb-af08-79a8a5b1d674/">安装Archlinux进u盘</a></p>
+<p><a href="https://www.bilibili.com/video/av39559447/">视频：将Archlinux装进U盘</a></p>
+<h3 id="准备">准备</h3>
+<ol>
+<li>VMware虚拟机（本人版本：15.1.0 build-13591040）</li>
+<li>archlinux iso 推荐USTC镜像下载</li>
+<li>U盘一个</li>
+</ol>
+<h2 id="开始">开始</h2>
+<ol>
+<li>启动虚拟机，新建，注意添加硬件，选上USB3.0，勾选全部选项。新建完成打开虚拟机设置里的选项，找到UEFI启动，勾选。</li>
+<li>添加archlinux的镜像文件，启动。</li>
+<li>进入安装的文字界面，用 <code>lsblk</code> 看U盘在不在。</li>
+<li><code>ping</code> 一下看网络是否正常。</li>
+<li>分区。注意是UEFI启动。</li>
+<li>挂载。</li>
+<li>安装。</li>
+<li>chroot。</li>
+<li>设置时间，使用localtime。</li>
+<li>本地化。</li>
+<li>设置hostname。</li>
+<li>设置密码。</li>
+<li>安装引导程序，推荐grub2。</li>
+<li>关闭虚拟机，然后重启进入u盘系统。注意u盘是否分为两个区及以上。</li>
+</ol>
+<h2 id="安装后">安装后</h2>
+<h3 id="图形界面">图形界面</h3>
+<ol>
+<li>除了deepin和deepin-extra等等，还需要安装xorg等包，设置ldm，xinit之类的。</li>
+<li>关注一下显卡问题，多搜一些。</li>
+<li>启动。</li>
+</ol>
+<h3 id="其余">其余</h3>
+<p>输入法推荐ibus-rime。注意要改一下配置文件。</p>
+<p>安装后可能会有中文显示异常，安装一下谷歌的noto cjk sc，在设置里选上。</p>
+<p>我现在用的还有画面撕裂问题，不过不像其他系统里的垂直方向的撕裂，而是斜向2333。不过看视频的时候似乎没有什么问题。</p>
+<p>耳机的滋滋声终于没了，Windows10里的滋滋声真的很烦。之前用了Microsoft的驱动，没有问题，后来重装了系统，更新到现在这个版本就不行了。各种方法都用了，屁用没有。垄断害死人啊，要是linux系统桌面和常用软件的生态能好一点，我也不用忍受这破问题了。国内IT怎么就这么烂呢。</p>
+<p>现在的已知问题还有待机长时间桌面会崩溃，估计跟u盘有关。</p>
+<h2 id="后记">后记</h2>
+<p>现在就这么简单地记下，以后有时间就详细介绍。不过也没什么意思。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[续莫谈国是]]></title>
         <id>https://weichzh.github.io/post/Ao6O-94Hl</id>
