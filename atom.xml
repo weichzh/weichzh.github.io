@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-10-08T15:47:00.164Z</updated>
+    <updated>2019-10-08T15:57:14.861Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://weichzh.github.io/images/avatar.png</logo>
     <icon>https://weichzh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 微尘众</rights>
+    <entry>
+        <title type="html"><![CDATA[事业规划]]></title>
+        <id>https://weichzh.github.io/post/Z66nKLrR-</id>
+        <link href="https://weichzh.github.io/post/Z66nKLrR-">
+        </link>
+        <updated>2019-10-08T15:52:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>必须搞清楚我喜欢什么，要去做些什么了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>必须搞清楚我喜欢什么，要去做些什么了。</p>
+<!-- more -->
+<h2 id="认知">认知</h2>
+<p>认识自己。</p>
+<h2 id="计算">计算</h2>
+<p>发展自己。</p>
+<h2 id="表达">表达</h2>
+<p>展示自己。</p>
+<h2 id="完了">完了🤓</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[将archlinux装进U盘(笔记本双显卡）]]></title>
         <id>https://weichzh.github.io/post/oOl0PTJoX</id>
