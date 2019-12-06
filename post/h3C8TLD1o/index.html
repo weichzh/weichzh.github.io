@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" >
 
-<title>语法高亮检测 | 微尘众</title>
+<title>Leetcode_As_C--1-两数之和 | 微尘众</title>
 <meta name="description" content="言语道断, 非去来今">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1570550231712">
+<link rel="shortcut icon" href="https://weichzh.github.io/favicon.ico?v=1575627354725">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -80,43 +80,61 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>语法高亮检测</h1>
+            <h1>Leetcode_As_C--1-两数之和</h1>
             <p class="article-meta">
-              2019-06-25
-              
-                <a href="https://weichzh.github.io/tag/IpTYVTiOr" class="badge success">
-                  杂记
-                </a>
+              2019-11-08
               
             </p>
             
             <div class="post-content">
-              <pre><code class="language-C">#include  &lt;stdio.h&gt;
+              <h2 id="描述">描述</h2>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<p>示例:</p>
+<pre><code>给定 nums = [2, 7, 11, 15], target = 9
 
-int main(void)
-{
-    char S[] = &quot;master&quot;;
-    printf(&quot;Hello, %s!\n&quot;, S);
-    return 0;
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+</code></pre>
+<blockquote>
+<p>来源：力扣（LeetCode）<br>
+链接：<a href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a><br>
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h2 id="暴力法">暴力法</h2>
+<p>将所有组合方式都与目标进行等值判断。若共有n个数，则有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>C</mi><mi>n</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">C^2_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.061108em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span></span>种组合方式。对于<code>nums[0]</code>，从<code>nums[1]</code>到<code>nums[n-1]</code>共n-1种组合。C代码如下：</p>
+<pre><code class="language-C">int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+    int * result = (int *)malloc(sizeof(int) * 2); // 在内存中动态地分配一块大小为sizeof(int)*2的内存空间
+    for (int i = 0; i &lt; numsSize - 1; i++) {
+        for (int j = i + 1; j &lt; numsSize; j++) {
+            if (nums[i] + nums[j] == target) {
+                *returnSize = 2;
+                result[0] = i;
+                result[1] = j;
+                return result;
+            }
+        }
+    }
+    return result; 
 }
 </code></pre>
-<pre><code class="language-Python">import sys
-import math
-
-# Write your code here.
-# Click on &quot;RUN&quot; to execute it
-print(&quot;Hello World!&quot;)
+<h2 id="哈希表法">哈希表法</h2>
+<blockquote>
+<p>哈希表就是一种以 键-值(key-indexed) 存储数据的结构，我们只要输入待查找的值即key，即可查找到其对应的值。</p>
+<p><a href="https://www.cnblogs.com/yangecnu/p/Introduce-Hashtable.html"> https://www.cnblogs.com/yangecnu/p/Introduce-Hashtable.html </a></p>
+</blockquote>
+<p>哈希表使用如下链表存储。</p>
+<pre><code class="language-C">struct hash_data {
+    int key;
+    int data;
+    struct hash_data * next;
+};
 </code></pre>
-<pre><code class="language-Rust">
-fn main() {
-    // Write your code here.
-    // Click on &quot;RUN&quot; to execute it
-    println!(&quot;Hello World!&quot;);
-}
-</code></pre>
-<pre><code class="language-Bash"># Write your code here.
-# Click on &quot;RUN&quot; to execute it.
-echo &quot;Hello world!&quot;
+<p>链表放在下面的结构体中以便使用。</p>
+<pre><code class="language-C"> struct hash_table {
+    struct hash_data ** head; // 链表数组
+    int hash_width;
+};
 </code></pre>
 
             </div>
@@ -128,9 +146,9 @@ echo &quot;Hello world!&quot;
               <div class="next">
                 下一篇
               </div>
-              <a href="https://weichzh.github.io/post/3z-IY_Jl5">
+              <a href="https://weichzh.github.io/post/Z66nKLrR-">
                 <h3 class="post-title">
-                  命题逻辑笔记
+                  事业规划
                 </h3>
               </a>
             </div>
@@ -149,7 +167,7 @@ echo &quot;Hello world!&quot;
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://weichzh.github.io/images/avatar.png?v=1570550231712" class="no-responsive avatar">
+    <img src="https://weichzh.github.io/images/avatar.png?v=1575627354725" class="no-responsive avatar">
     <div class="text-muted">言语道断, 非去来今</div>
     <div class="social-container">
       
@@ -178,6 +196,18 @@ echo &quot;Hello world!&quot;
         
           
             <li>
+              <a href="https://weichzh.github.io/post/KLA1v1Pkk">许个愿</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://weichzh.github.io/post/h3C8TLD1o">Leetcode_As_C--1-两数之和</a>
+            </li>
+          
+        
+          
+            <li>
               <a href="https://weichzh.github.io/post/Z66nKLrR-">事业规划</a>
             </li>
           
@@ -185,24 +215,6 @@ echo &quot;Hello world!&quot;
           
             <li>
               <a href="https://weichzh.github.io/post/oOl0PTJoX">将archlinux装进U盘(笔记本双显卡）</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://weichzh.github.io/post/Ao6O-94Hl">续莫谈国是</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://weichzh.github.io/post/GD4SZXjJM">莫谈国是</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://weichzh.github.io/post/Je7qTbJf_">语法高亮检测</a>
             </li>
           
         
@@ -227,15 +239,11 @@ echo &quot;Hello world!&quot;
     </div>
     <div class="row">
       
-        <a href="https://weichzh.github.io/tag/IpTYVTiOr" class="badge secondary">
+        <a href="https://weichzh.github.io/tag/IpTYVTiOr" class="badge ">
           杂记
         </a>
       
-        <a href="https://weichzh.github.io/tag/expression" class="badge warning">
-          表达
-        </a>
-      
-        <a href="https://weichzh.github.io/tag/recognition" class="badge warning">
+        <a href="https://weichzh.github.io/tag/recognition" class="badge secondary">
           认知
         </a>
       

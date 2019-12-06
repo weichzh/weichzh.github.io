@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-10-08T15:57:14.861Z</updated>
+    <updated>2019-12-06T10:16:07.245Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -10,6 +10,79 @@
     <logo>https://weichzh.github.io/images/avatar.png</logo>
     <icon>https://weichzh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 微尘众</rights>
+    <entry>
+        <title type="html"><![CDATA[许个愿]]></title>
+        <id>https://weichzh.github.io/post/KLA1v1Pkk</id>
+        <link href="https://weichzh.github.io/post/KLA1v1Pkk">
+        </link>
+        <updated>2019-12-06T09:57:06.000Z</updated>
+        <summary type="html"><![CDATA[<p>GitHub搞了个归档计划，我没能力为后人贡献代码，那就许个愿吧。😉</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>GitHub搞了个归档计划，我没能力为后人贡献代码，那就许个愿吧。😉</p>
+<!-- more -->
+<p><a href="https://archiveprogram.github.com/">GitHub归档计划</a><br>
+希望我这一生能快乐到老。<br>
+希望未来人类能顺利殖民宇宙。<br>
+希望世界永远和平。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Leetcode_As_C--1-两数之和]]></title>
+        <id>https://weichzh.github.io/post/h3C8TLD1o</id>
+        <link href="https://weichzh.github.io/post/h3C8TLD1o">
+        </link>
+        <updated>2019-11-08T13:24:48.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="描述">描述</h2>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<p>示例:</p>
+<pre><code>给定 nums = [2, 7, 11, 15], target = 9
+
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+</code></pre>
+<blockquote>
+<p>来源：力扣（LeetCode）<br>
+链接：<a href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a><br>
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h2 id="暴力法">暴力法</h2>
+<p>将所有组合方式都与目标进行等值判断。若共有n个数，则有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>C</mi><mi>n</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">C^2_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.061108em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-2.4530000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span></span>种组合方式。对于<code>nums[0]</code>，从<code>nums[1]</code>到<code>nums[n-1]</code>共n-1种组合。C代码如下：</p>
+<pre><code class="language-C">int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+    int * result = (int *)malloc(sizeof(int) * 2); // 在内存中动态地分配一块大小为sizeof(int)*2的内存空间
+    for (int i = 0; i &lt; numsSize - 1; i++) {
+        for (int j = i + 1; j &lt; numsSize; j++) {
+            if (nums[i] + nums[j] == target) {
+                *returnSize = 2;
+                result[0] = i;
+                result[1] = j;
+                return result;
+            }
+        }
+    }
+    return result; 
+}
+</code></pre>
+<h2 id="哈希表法">哈希表法</h2>
+<blockquote>
+<p>哈希表就是一种以 键-值(key-indexed) 存储数据的结构，我们只要输入待查找的值即key，即可查找到其对应的值。</p>
+<p><a href="https://www.cnblogs.com/yangecnu/p/Introduce-Hashtable.html"> https://www.cnblogs.com/yangecnu/p/Introduce-Hashtable.html </a></p>
+</blockquote>
+<p>哈希表使用如下链表存储。</p>
+<pre><code class="language-C">struct hash_data {
+    int key;
+    int data;
+    struct hash_data * next;
+};
+</code></pre>
+<p>链表放在下面的结构体中以便使用。</p>
+<pre><code class="language-C"> struct hash_table {
+    struct hash_data ** head; // 链表数组
+    int hash_width;
+};
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[事业规划]]></title>
         <id>https://weichzh.github.io/post/Z66nKLrR-</id>
@@ -86,78 +159,6 @@
 <p>现在的已知问题还有待机长时间桌面会崩溃，估计跟u盘有关。</p>
 <h2 id="后记">后记</h2>
 <p>现在就这么简单地记下，以后有时间就详细介绍。不过也没什么意思。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[续莫谈国是]]></title>
-        <id>https://weichzh.github.io/post/Ao6O-94Hl</id>
-        <link href="https://weichzh.github.io/post/Ao6O-94Hl">
-        </link>
-        <updated>2019-08-19T10:47:47.000Z</updated>
-        <summary type="html"><![CDATA[<p>真的是感想越来越多了</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>真的是感想越来越多了</p>
-<!-- more -->
-<p><a href="https://program-think.blogspot.com/">编程随想</a><br>
-<a href="https://www.informationisbeautiful.net/visualizations/rhetological-fallacies/">关于逻辑谬误的一个很有趣的网站</a></p>
-<p>早就发现了一个叫编程随想的博客，不过到现在才发现这个博客的有趣之处。当时是因为一个技术问题才搜到的，然后就很轻松地看到了作者的几篇政治博文，看了几个标题以为是法轮功，便付之一哂。孰料之后搜香港问题解闷，发现这哥们引了相当多的干货，于是就有了兴趣，浏览了一下作者的历史文章，是个牛人。他推荐的书也基本不错，值得一看。不过过于关心政治尤其中国政治，并没有深入研究，所以文章会有一种众人皆醉我独醒的感觉，跟国内某些动辄就全体美国人怎么怎么样的很像，不过水平更高。但他认为我国教育缺少批判性思维的观点，我强烈赞同。国内也有逻辑学家呼吁大家真正重视逻辑教育，比如2002年南京大学哲学系张建军载于《人民日报》的文章<a href="http://phil.cssn.cn/zhx/zx_ljx/201705/t20170526_3532314.shtml">《真正重视“逻先生”》</a>。可惜我不是那个时代的人，不知道有什么影响，不过看现在小学中学教育的这副德性也知道影响大不大了。<br>
-逻辑谬误（Fallacies）这东西没有逻辑学基础很容易滥用，因为学逻辑的必须要有一个重要的意识，逻辑学不能解决大部分问题。而那些所谓的“逻辑谬误”往往会有一些潜在的前提，或者是一种大概齐的正确，具体问题具体分析，一棍打死恰恰说明不懂逻辑学的范畴。但逻辑又是一种基本技能，基本常识，是人类超越自然的伟大艺术，人人都应该掌握。结果在中学教育里只局限在数学和物理的一小部分，物理还不考。我认为逻辑学应该独立起来，最起码也要放在语文里面考，类似病句修改一样。很简单，很轻松，就批判性思维那点东西，老外叫Baby Baby Logic，上课根本占用不了多长时间，掌握也是纯做题的东西，非常适合我们的应试教育。当然我还没有享受过社会主义的大棒，我还有信心，不至于绝望，绝望到以自己为中国人为耻的地步。<br>
-编程随想下面的评论区人才们各个儒雅随和，给我带来了无穷的乐趣，闲着没事的可以看看，加入人群一起口吐芬芳也是个很好的解压方式。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[莫谈国是]]></title>
-        <id>https://weichzh.github.io/post/GD4SZXjJM</id>
-        <link href="https://weichzh.github.io/post/GD4SZXjJM">
-        </link>
-        <updated>2019-08-14T15:31:04.000Z</updated>
-        <summary type="html"><![CDATA[<p><strong>知识分子在现在的局势下如何自处(我也不知道)</strong></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><strong>知识分子在现在的局势下如何自处(我也不知道)</strong></p>
-<!-- more -->
-<p>近些年来日子颇不太平。不要说什么贸易战，反送中，即便是国内经济也是一片不景气。<br>
-程序员日子不好过啊，本来就没多大能耐，也就是逛逛论坛吹吹比，边摸鱼边抱怨996，再骂一句国内垃圾，才能勉强维持得了生活这个样子。发泄，观察一下舆论，基本都是悲观的论调，怎么办？加入宣泄的大军，只要保持队形就不会有人喷。<br>
-我向来以自由主义者自居。先强调人的自由，再论人与社会的关系。如果什么都不凭借，独自一人，我想干什么就干什么。但我毕竟不是石头里蹦出来的，社会为我提供了相当的服务，那我就有相当的义务去执行，有相当的社会责任去承担。此时就有个问题，如何去评定这个量？社会如果损害了我的个人权利，我必须要得到相应的补偿，与前面的相对应，我与社会就必须做到互不亏欠。在人人平等的前提下，社会能提供的价值总量必须大于等于组成社会个体价值的总量。这样的社会是我理想中的社会。<br>
-然而现实社会往往以损害一部分人的利益来满足另一部分人的利益，即便价值总量不变甚至增长，这也是对个人价值的极大不尊重。集体主义者往往反对这样的言论，把这种损害当作牺牲，是无私奉献。我想说无私奉献是对现代社会的极大侮辱。怎样才算现代文明社会？是，并不是西方那样才算，但这不意味着我们就好到哪里去。我眼中的现代文明社会，制度完善且能继续发展，人们因价值观走到一起，不同人群之间不存在利益冲突。我也知道这不切实际，但让我意淫一下总是可以的。<br>
-我是反对资本主义的，我不希望有一个大股东之类的人占据着公司的大部分资源，这是私司。所有人都是为公司打工，领工资，奖金，福利。公司剩余的钱应该用于建立类似基金会的组织，代表着公司创立的目标，这种目标当然不是挣钱，而是能聚集一群人的价值观灯塔。因此，所谓的投资都是为了所谓梦想，而不是挣钱，挣钱只是实现梦想的一种有力手段而已。如此一来，曾经的中产阶级会越来越多，而富豪会越来越少，贫富差距自然变小。<br>
-因为胡适的影响，我以为自由主义者都是胡适这种温和的谦谦君子。即便政见不合，私交也不错。可我很快意识到，胡适的温和并非来自他从西方所学，而是成人以前的教育，这包括传统儒学，母亲的教育等。自由主义者很容易受到压迫，这种压迫往往会使相当一部分人精神失常，当然这并非一种疾病，而是过激反应，胡适这样的人才是极少数。这与童年教育有关，因此这群人并没有多少感恩的意识，给人一种极其自私，歇斯底里的感觉。毕竟在这样一个专制，压迫，剥削的社会，做到温和实在是极其困难的。于是在海外自由主义的大本营，各种过激言论让我瞠目结舌，也不难发现，这些人受日本文化影响很大。我很庆幸自己及早看到这些人的言论，让我能离这群人更远。胡适的处世态度是我所钦佩的，这与我急于表达的欲望相冲突。尽管那群人自诩扛着自由民主的大旗，言论不过都是些更偏激的鲁迅体，几个就够了，多了不过是在重复而已。<br>
-我也越来越发现，我国的传统学术并非现在某些人所说那么一无是处，这些理论反而是超前而非落后，因为硬要往现代学术体系上靠，也是在前沿阵地。但我国古代的学术没有根基，太超前了，并没有严谨的理论支撑所以显得很虚，有些国学吹因此而宣扬什么博大精深，其实是故弄玄虚，他自己都不清楚的。古人写论文喜欢用比喻就是这种无根基的体现，因为并没有能力建立一个严谨的理论模型去演绎，于是只能类比，归纳。即便有推理也是在极其浅显的地方。《道德经》有理论基础，但比较玄，朴素，还是字太少。墨家，名家也都有一些朴素的理论建立的萌芽，但对当时的学者来说比喻和类比太好用了，而这些理论模型按照当时的水平，很难在短时间内有重大进展，自然逐渐消失在历史中（又论证了和平发展的重要性，战争会加速实用主义的发展和其他理论的灭亡）。这些底层框架被抛弃，所有人都在盯着顶层设计，讲究实际，方法又不先进，自然不可能迅速发展。古希腊学术有阿拉伯继承，中国的呢？一直到民国才有系统研究，到近现代却成为了民族主义者对抗西方中心论的工具，着实荒唐。新儒学就是一个荒唐的例子，大学者们拼命为儒学续命，结果呢？这些都是资料和灵感来源，理应为现代学术提供价值，而不是为旧学术招魂。<br>
-民族主义实在是学术大患，反西方又不是反现代化，有些人真的魔怔了，或者是别有用心。反西方仅仅是因为我们不是西方，仅此而已。学术自信是要靠领跑学术潮流建立的，而不是固步自封。汉语言在现代化的过程中被一帮文人桎梏住了，导致现在许多专业词汇反倒变得通俗多义，这在英文中更常见，但英文是所谓“精确”的语言，中国人学习英文因为不是母语，面对专业词汇经常查字典，反倒理解起来更轻松。而且，中文专著喜欢扯出一大堆专有名词，辞典都查不到的那种，同时，英文专著多使用常用词汇，反倒通俗易懂，不需要花时间去查。当然，我更倾向使用专业词汇，前提是必须建立一个标准来规范这些词汇，有些学者语文太差，翻译的，自造的，都不知道是什么玩意儿。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[语法高亮检测]]></title>
-        <id>https://weichzh.github.io/post/Je7qTbJf_</id>
-        <link href="https://weichzh.github.io/post/Je7qTbJf_">
-        </link>
-        <updated>2019-06-25T04:54:53.000Z</updated>
-        <content type="html"><![CDATA[<pre><code class="language-C">#include  &lt;stdio.h&gt;
-
-int main(void)
-{
-    char S[] = &quot;master&quot;;
-    printf(&quot;Hello, %s!\n&quot;, S);
-    return 0;
-}
-</code></pre>
-<pre><code class="language-Python">import sys
-import math
-
-# Write your code here.
-# Click on &quot;RUN&quot; to execute it
-print(&quot;Hello World!&quot;)
-</code></pre>
-<pre><code class="language-Rust">
-fn main() {
-    // Write your code here.
-    // Click on &quot;RUN&quot; to execute it
-    println!(&quot;Hello World!&quot;);
-}
-</code></pre>
-<pre><code class="language-Bash"># Write your code here.
-# Click on &quot;RUN&quot; to execute it.
-echo &quot;Hello world!&quot;
-</code></pre>
 ]]></content>
     </entry>
     <entry>
