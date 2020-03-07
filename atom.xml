@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2019-12-06T10:16:07.245Z</updated>
+    <updated>2020-03-07T05:53:25.523Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
     <subtitle>言语道断, 非去来今</subtitle>
     <logo>https://weichzh.github.io/images/avatar.png</logo>
     <icon>https://weichzh.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, 微尘众</rights>
+    <rights>All rights reserved 2020, 微尘众</rights>
     <entry>
         <title type="html"><![CDATA[许个愿]]></title>
-        <id>https://weichzh.github.io/post/KLA1v1Pkk</id>
-        <link href="https://weichzh.github.io/post/KLA1v1Pkk">
+        <id>https://weichzh.github.io/post/KLA1v1Pkk/</id>
+        <link href="https://weichzh.github.io/post/KLA1v1Pkk/">
         </link>
         <updated>2019-12-06T09:57:06.000Z</updated>
         <summary type="html"><![CDATA[<p>GitHub搞了个归档计划，我没能力为后人贡献代码，那就许个愿吧。😉</p>
@@ -28,8 +28,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Leetcode_As_C--1-两数之和]]></title>
-        <id>https://weichzh.github.io/post/h3C8TLD1o</id>
-        <link href="https://weichzh.github.io/post/h3C8TLD1o">
+        <id>https://weichzh.github.io/post/h3C8TLD1o/</id>
+        <link href="https://weichzh.github.io/post/h3C8TLD1o/">
         </link>
         <updated>2019-11-08T13:24:48.000Z</updated>
         <content type="html"><![CDATA[<h2 id="描述">描述</h2>
@@ -85,8 +85,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[事业规划]]></title>
-        <id>https://weichzh.github.io/post/Z66nKLrR-</id>
-        <link href="https://weichzh.github.io/post/Z66nKLrR-">
+        <id>https://weichzh.github.io/post/Z66nKLrR-/</id>
+        <link href="https://weichzh.github.io/post/Z66nKLrR-/">
         </link>
         <updated>2019-10-08T15:52:43.000Z</updated>
         <summary type="html"><![CDATA[<p>必须搞清楚我喜欢什么，要去做些什么了。</p>
@@ -104,8 +104,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[将archlinux装进U盘(笔记本双显卡）]]></title>
-        <id>https://weichzh.github.io/post/oOl0PTJoX</id>
-        <link href="https://weichzh.github.io/post/oOl0PTJoX">
+        <id>https://weichzh.github.io/post/oOl0PTJoX/</id>
+        <link href="https://weichzh.github.io/post/oOl0PTJoX/">
         </link>
         <updated>2019-09-17T03:19:35.000Z</updated>
         <summary type="html"><![CDATA[<p>搞了好几天，差不多能用了。</p>
@@ -163,8 +163,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[命题逻辑笔记]]></title>
-        <id>https://weichzh.github.io/post/3z-IY_Jl5</id>
-        <link href="https://weichzh.github.io/post/3z-IY_Jl5">
+        <id>https://weichzh.github.io/post/3z-IY_Jl5/</id>
+        <link href="https://weichzh.github.io/post/3z-IY_Jl5/">
         </link>
         <updated>2019-05-18T19:04:41.000Z</updated>
         <summary type="html"><![CDATA[<p>《数理逻辑引论》- 冯琦</p>
@@ -343,8 +343,8 @@ The subformulas of <span class="katex"><span class="katex-mathml"><math><semanti
     </entry>
     <entry>
         <title type="html"><![CDATA[算法学习--分而治之]]></title>
-        <id>https://weichzh.github.io/post/EDhrQDYCy</id>
-        <link href="https://weichzh.github.io/post/EDhrQDYCy">
+        <id>https://weichzh.github.io/post/EDhrQDYCy/</id>
+        <link href="https://weichzh.github.io/post/EDhrQDYCy/">
         </link>
         <updated>2019-05-18T19:04:41.000Z</updated>
         <summary type="html"><![CDATA[<p>学习, 学个屁!!!</p>
