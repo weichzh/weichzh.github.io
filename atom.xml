@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://weichzh.github.io</id>
     <title>微尘众</title>
-    <updated>2020-09-26T03:57:35.696Z</updated>
+    <updated>2020-09-26T03:58:35.142Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://weichzh.github.io"/>
     <link rel="self" href="https://weichzh.github.io/atom.xml"/>
@@ -16,7 +16,10 @@
         <link href="https://weichzh.github.io/post/HU2U5gvh2/">
         </link>
         <updated>2020-09-26T03:55:58.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="对个人应用的看法">对个人应用的看法</h1>
+        <summary type="html"><![CDATA[<p>一点想法</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一点想法</p>
+<!-- more -->
 <h2 id="前言">前言</h2>
 <p>本文将从<strong>个人主义</strong>的角度出发，探讨一个最舒适的个人知识库和应用集合。</p>
 <h2 id="什么是个人主义的角度">什么是个人主义的角度</h2>
