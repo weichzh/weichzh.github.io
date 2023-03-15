@@ -12,6 +12,7 @@ buildFuture: false
 buildExpired: false
 defaultContentLanguage: zh
 hasCJKLanguage: true
+disqusShortname: https-weichzh-github-io-1
 
 minify:
   disableXML: true
