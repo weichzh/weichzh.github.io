@@ -13,6 +13,7 @@ buildExpired: false
 defaultContentLanguage: zh
 hasCJKLanguage: true
 disqusShortname: https-weichzh-github-io
+googleAnalytics: G-SLEQ73N24W
 
 minify:
   disableXML: true
