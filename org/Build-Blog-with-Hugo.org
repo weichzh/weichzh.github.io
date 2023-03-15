@@ -31,7 +31,7 @@ Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问�
 在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。
 
 在把诸如 Org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 *享受* Emacs
-和 Orgmode 的强大了。
+和 org-mode 的强大了。
 
 * 创建网站
 首先在终端里输入：
@@ -39,12 +39,13 @@ Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问�
 hugo new site <Your blog name> -f yml
 #+END_SRC
 
-之所以用 yml 作为博客的配置文件格式，是因为我要用 [[https://github.com/adityatelange/hugo-PaperMod/][PaperMod]] 作为博客的主题。下面开始导入主题。
+之所以用 yml 作为博客的配置文件格式，是因为我要用 [[https://github.com/adityatelange/hugo-PaperMod/][PaperMod]] 作为博客的主题。下面
+开始导入主题。
 #+BEGIN_SRC shell
-cd blog # 进入你的博客文件夹
-git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库
-git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-git submodule update --init --recursive
+cd blog # 进入你的博客文件夹git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库
+git submodule add --depth=1
+https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod git submodule
+update --init --recursive
 #+END_SRC
 
 如果之后要升级主题，则使用：
