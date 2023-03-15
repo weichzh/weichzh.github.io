@@ -2,27 +2,10 @@
 title = "用 Hugo 搭建博客 | 用 org-mode 写作"
 author = ["Weichzh"]
 date = 2023-03-15T20:23:00+08:00
-lastmod = 2023-03-15T21:40:26+08:00
-tags = [":技术:"]
+lastmod = 2023-03-15T22:18:50+08:00
+tags = ["技术"]
 draft = false
 +++
-
-<div class="ox-hugo-toc toc">
-
-<div class="heading">&#30446;&#24405;</div>
-
-- [导言](#导言)
-- [目标](#目标)
-- [准备阶段](#准备阶段)
-- [创建网站](#创建网站)
-- [设置](#设置)
-    - [Hugo](#hugo)
-    - [Org-mode](#org-mode)
-- [写作](#写作)
-
-</div>
-<!--endtoc-->
-
 
 ## 导言 {#导言}
 
@@ -86,8 +69,8 @@ git submodule update --remote --merge
 
 PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 [这篇文章](https://www.sulvblog.cn/posts/blog/build_hugo/) 。
 
-Google Analytics 的 `SiteVerificationTag` 要去 Google Analytics 的 **管理** 创建 \*
-媒体资源\* 后，再在 **媒体资源** 下面的 **数据流** ，把网站点进去，就可以看到 **衡量
+Google Analytics 的 `SiteVerificationTag` 要去 Google Analytics 的 **管理** 创建
+**媒体资源** 后，再在 **媒体资源** 下面的 **数据流** ，把网站点进去，就可以看到 **衡量
 ID** 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦截软件给拦截了。
 
 关于 favicon ，推荐一个网站 [favicon.io](https://favicon.io/) 。
@@ -125,4 +108,7 @@ $0
 写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 `hugo` 补全，用 `<tab>`
 来在各个属性间跳转。
 
-写好之后，保存，在终端里用 `hugo` 命令生成网页。
+写好之后，保存，用 `C-c C-e H h` 将其转换为 markdown 文件，然后就可以用 `hugo
+server` 看看效果了。再用 `hugo` 命令生成网页。
+
+关于使用 github pages 来创建网站，可以看 [这个](https://gohugo.io/hosting-and-deployment/hosting-on-github/) 。

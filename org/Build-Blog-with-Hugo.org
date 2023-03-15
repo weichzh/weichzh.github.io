@@ -97,3 +97,5 @@ $0
 
 写好之后，保存，用 ~C-c C-e H h~ 将其转换为 markdown 文件，然后就可以用 =hugo
 server= 看看效果了。再用 =hugo= 命令生成网页。
+
+关于使用 github pages 来创建网站，可以看 [[https://gohugo.io/hosting-and-deployment/hosting-on-github/][这个]] 。
