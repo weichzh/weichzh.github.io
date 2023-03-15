@@ -4,14 +4,20 @@ theme: 'PaperMod'
 title: 微尘众的博客
 
 enableRobotsTXT: true
+enableEmoji: true
+paginate: 10
 buildDrafts: false
 buildFuture: false
 buildExpired: false
 defaultContentLanguage: zh
+hasCJKLanguage: true
 
 minify:
   disableXML: true
-  minifyOutput: true
+  # minifyOutput: true
+
+taxonomies:
+  tag: tags
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -35,24 +41,25 @@ params:
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
-  comments: false
+  comments: true
   hidemeta: false
   hideSummary: false
-  showtoc: true
-  tocopen: false
+  ShowToc: true
+  TocOpen: false
+
 
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    # favicon: "<link / abs url>"
-    # favicon16x16: "<link / abs url>"
-    # favicon32x32: "<link / abs url>"
-    # apple_touch_icon: "<link / abs url>"
-    # safari_pinned_tab: "<link / abs url>"
+    favicon: "img/favicon.ico"
+    favicon16x16: "img/favicon-16x16.png"
+    favicon32x32: "img/favicon-32x32.png"
+    apple_touch_icon: "img/apple-touch-icon.png"
+    safari_pinned_tab: "img/favicon.ico"
 
   label:
     text: "主页"
-    icon: /apple-touch-icon.png
+    icon: "/img/apple-touch-icon.png"
     iconHeight: 35
 
   # profile-mode
@@ -60,15 +67,15 @@ params:
     enabled: true # needs to be explicitly set
     title: 微尘众
     subtitle: "言语道断，非去来今"
-    imageUrl: "https://github.com/weichzh/middle-station/blob/master/avatar.jpg?raw=true"
+    imageUrl: "img/avatar.jpg"
     imageWidth: 120
     imageHeight: 120
-    imageTitle: 我的头像
-    buttons:
-      - name: 博文
-        url: posts
-      - name: 标签
-        url: tags
+    imageTitle:
+    # buttons:
+    #   - name: 博文
+    #     url: posts
+    #   - name: 标签
+    #     url: tags
 
   # home-info mode
   homeInfoParams:
@@ -86,10 +93,6 @@ params:
   analytics:
     google:
       SiteVerificationTag: "G-SLEQ73N24W"
-    # bing:
-    #   SiteVerificationTag: "XYZabc"
-    # yandex:
-    #   SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -113,25 +116,47 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: 目录
-      url: /categories/
+    - identifier: search
+      name: 搜索
+      url: /search/
       weight: 10
     - identifier: tags
       name: 标签
       url: /tags/
       weight: 20
-    # - identifier: example
-    #   name: example.org
-    #   url: https://example.org
-    #   weight: 30
+    - identifier: posts
+      name: 文章
+      url: posts
+      weight: 30
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
+frontmatter:
+  date:
+    - date
+    - publishDate
+    - lastmod
+  lastmod:
+    - :git
+    - lastmod
+    - date
+    - publishDate
+  publishDate:
+    - publishDate
+    - date
 markup:
   highlight:
     noClasses: false
     # anchorLineNos: true
-    # codeFences: true
-    # guessSyntax: true
-    # lineNos: true
-    # style: monokai
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: darcula
+outputs:
+  home:
+    - HTML
+    - CSS
+    - JSON
