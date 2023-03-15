@@ -1,4 +1,5 @@
 baseURL: https://weichzh.github.io/
+publishDir: docs
 languageCode: zh
 theme: 'PaperMod'
 title: 微尘众的博客
