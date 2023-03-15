@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>用 Hugo 搭建博客 | 用 org-mode 写作 | 微尘众的博客</title>
-<meta name="keywords" content=":技术:">
-<meta name="description" content="导言 目标 准备阶段 创建网站 设置 Hugo Org-mode 写作 导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭">
+<meta name="keywords" content="技术">
+<meta name="description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走">
 <meta name="author" content="Weichzh">
 <link rel="canonical" href="https://weichzh.github.io/posts/build-blog-with-hugo/">
 <meta name="google-site-verification" content="G-SLEQ73N24W">
@@ -58,15 +58,15 @@
 
     </style>
 </noscript><meta property="og:title" content="用 Hugo 搭建博客 | 用 org-mode 写作" />
-<meta property="og:description" content="导言 目标 准备阶段 创建网站 设置 Hugo Org-mode 写作 导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭" />
+<meta property="og:description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://weichzh.github.io/posts/build-blog-with-hugo/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-15T20:23:00+08:00" />
-<meta property="article:modified_time" content="2023-03-15T21:40:26+08:00" /><meta property="og:site_name" content="微尘众的博客" />
+<meta property="article:modified_time" content="2023-03-15T22:18:50+08:00" /><meta property="og:site_name" content="微尘众的博客" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用 Hugo 搭建博客 | 用 org-mode 写作"/>
-<meta name="twitter:description" content="导言 目标 准备阶段 创建网站 设置 Hugo Org-mode 写作 导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭"/>
+<meta name="twitter:description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走"/>
 
 
 <script type="application/ld+json">
@@ -95,15 +95,15 @@
   "@type": "BlogPosting",
   "headline": "用 Hugo 搭建博客 | 用 org-mode 写作",
   "name": "用 Hugo 搭建博客 | 用 org-mode 写作",
-  "description": "导言 目标 准备阶段 创建网站 设置 Hugo Org-mode 写作 导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭",
+  "description": "导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走",
   "keywords": [
-    ":技术:"
+    "技术"
   ],
-  "articleBody": " 导言 目标 准备阶段 创建网站 设置 Hugo Org-mode 写作 导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。\n目标 希望这次就能做到，写作方便，网站功能齐全，简洁雅观。这其实意味着要更多的自定义，但幸好有珠玉在前，虽然还是走了不少弯路。\n准备阶段 安装 Hugo 就不用多说了。Emacs 的配置才是重点。\n我使用的是 Doom Emacs 配置，需要在 init.el 文件里找到 org ，然后改成：\n1 (org +brain +dragdrop +roam2 +pretty +hugo +gnuplot +jupyter +pandoc +pomodoro) 其中 +hugo 这个是必须加的，其余的，加不加由你，我反正是加了。\n然后要在 config.el 文件中，把 org-directory 等变量设置好。具体可以看看一些介绍 Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问题，看 Emacs 相关中文问题以及解决方案 来解决这些问题。我以后可能会写一篇关于 org-mode 的文章，因为现在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。\n在把诸如 Org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 享受 Emacs 和 Orgmode 的强大了。\n创建网站 首先在终端里输入：\n1 hugo new site -f yml 之所以用 yml 作为博客的配置文件格式，是因为我要用 PaperMod 作为博客的主题。下面开始导入主题。\n1 2 3 4 cd blog # 进入你的博客文件夹 git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库 git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod git submodule update --init --recursive 如果之后要升级主题，则使用：\n1 git submodule update --remote --merge 然后使用 hugo server -D 打开网站预览。\n设置 Hugo PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 这篇文章 。\nGoogle Analytics 的 SiteVerificationTag 要去 Google Analytics 的 管理 创建 * 媒体资源* 后，再在 媒体资源 下面的 数据流 ，把网站点进去，就可以看到 衡量 ID 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦截软件给拦截了。\n关于 favicon ，推荐一个网站 favicon.io 。\n另外，像 tags 和 categories 这样的内置的页面，名字没有办法通过设置改成中文的，除非改代码。这个看看上面提到的样例网站的 源码 就知道了。\nOrg-mode 看 ox-hugo 的文档。可以说，我碰到的问题这个文档都能解决。\n创建 front matter 当然不用自己手打，有 Yasnippet 这个神器。我的 snippet 如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 # key: hugo # name: hugo # -- #+HUGO_BASE_DIR: ../ #+TITLE: $1 #+DATE: `(format-time-string \"[%Y-%m-%d %a %H:%M]\")` #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: $2 #+HUGO_DRAFT: false #+AUTHOR: Weichzh #+TOC: headlines 3 $0 写作 在 blog 里面新建一个 org 文件夹，专门放 org 文件（ Hugo 当然可以解析 org 文件，但效果显然没有 markdown 好）。\n写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 hugo 补全，用 来在各个属性间跳转。\n写好之后，保存，在终端里用 hugo 命令生成网页。\n",
-  "wordCount" : "974",
+  "articleBody": "导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。\n目标 希望这次就能做到，写作方便，网站功能齐全，简洁雅观。这其实意味着要更多的自定义，但幸好有珠玉在前，虽然还是走了不少弯路。\n准备阶段 安装 Hugo 就不用多说了。Emacs 的配置才是重点。\n我使用的是 Doom Emacs 配置，需要在 init.el 文件里找到 org ，然后改成：\n1 (org +brain +dragdrop +roam2 +pretty +hugo +gnuplot +jupyter +pandoc +pomodoro) 其中 +hugo 这个是必须加的，其余的，加不加由你，我反正是加了。\n然后要在 config.el 文件中，把 org-directory 等变量设置好。具体可以看看一些介绍 Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问题，看 Emacs 相关中文问题以及解决方案 来解决这些问题。我以后可能会写一篇关于 org-mode 的文章，因为现在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。\n在把诸如 Org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 享受 Emacs 和 Orgmode 的强大了。\n创建网站 首先在终端里输入：\n1 hugo new site -f yml 之所以用 yml 作为博客的配置文件格式，是因为我要用 PaperMod 作为博客的主题。下面开始导入主题。\n1 2 3 4 cd blog # 进入你的博客文件夹 git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库 git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod git submodule update --init --recursive 如果之后要升级主题，则使用：\n1 git submodule update --remote --merge 然后使用 hugo server -D 打开网站预览。\n设置 Hugo PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 这篇文章 。\nGoogle Analytics 的 SiteVerificationTag 要去 Google Analytics 的 管理 创建 媒体资源 后，再在 媒体资源 下面的 数据流 ，把网站点进去，就可以看到 衡量 ID 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦截软件给拦截了。\n关于 favicon ，推荐一个网站 favicon.io 。\n另外，像 tags 和 categories 这样的内置的页面，名字没有办法通过设置改成中文的，除非改代码。这个看看上面提到的样例网站的 源码 就知道了。\nOrg-mode 看 ox-hugo 的文档。可以说，我碰到的问题这个文档都能解决。\n创建 front matter 当然不用自己手打，有 Yasnippet 这个神器。我的 snippet 如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 # key: hugo # name: hugo # -- #+HUGO_BASE_DIR: ../ #+TITLE: $1 #+DATE: `(format-time-string \"[%Y-%m-%d %a %H:%M]\")` #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: $2 #+HUGO_DRAFT: false #+AUTHOR: Weichzh #+TOC: headlines 3 $0 写作 在 blog 里面新建一个 org 文件夹，专门放 org 文件（ Hugo 当然可以解析 org 文件，但效果显然没有 markdown 好）。\n写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 hugo 补全，用 来在各个属性间跳转。\n写好之后，保存，用 C-c C-e H h 将其转换为 markdown 文件，然后就可以用 hugo server 看看效果了。再用 hugo 命令生成网页。\n关于使用 github pages 来创建网站，可以看 这个 。\n",
+  "wordCount" : "997",
   "inLanguage": "zh",
   "datePublished": "2023-03-15T20:23:00+08:00",
-  "dateModified": "2023-03-15T21:40:26+08:00",
+  "dateModified": "2023-03-15T22:18:50+08:00",
   "author":[{
     "@type": "Person",
     "name": "Weichzh"
@@ -197,7 +197,7 @@
     <h1 class="post-title">
       用 Hugo 搭建博客 | 用 org-mode 写作
     </h1>
-    <div class="post-meta"><span title='2023-03-15 20:23:00 +0800 CST'>三月 15, 2023</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;974 字&nbsp;·&nbsp;Weichzh
+    <div class="post-meta"><span title='2023-03-15 20:23:00 +0800 CST'>三月 15, 2023</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;997 字&nbsp;·&nbsp;Weichzh
 
 </div>
   </header> <div class="toc">
@@ -225,23 +225,7 @@
     </details>
 </div>
 
-  <div class="post-content"><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<ul>
-<li><a href="#%E5%AF%BC%E8%A8%80">导言</a></li>
-<li><a href="#%E7%9B%AE%E6%A0%87">目标</a></li>
-<li><a href="#%E5%87%86%E5%A4%87%E9%98%B6%E6%AE%B5">准备阶段</a></li>
-<li><a href="#%E5%88%9B%E5%BB%BA%E7%BD%91%E7%AB%99">创建网站</a></li>
-<li><a href="#%E8%AE%BE%E7%BD%AE">设置</a>
-<ul>
-<li><a href="#hugo">Hugo</a></li>
-<li><a href="#org-mode">Org-mode</a></li>
-</ul>
-</li>
-<li><a href="#%E5%86%99%E4%BD%9C">写作</a></li>
-</ul>
-<!-- raw HTML omitted -->
-<h2 id="导言">导言<a hidden class="anchor" aria-hidden="true" href="#导言">#</a></h2>
+  <div class="post-content"><h2 id="导言">导言<a hidden class="anchor" aria-hidden="true" href="#导言">#</a></h2>
 <p>介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。</p>
 <h2 id="目标">目标<a hidden class="anchor" aria-hidden="true" href="#目标">#</a></h2>
 <p>希望这次就能做到，写作方便，网站功能齐全，简洁雅观。这其实意味着要更多的自定义，但幸好有珠玉在前，虽然还是走了不少弯路。</p>
@@ -299,8 +283,8 @@ Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问�
 <h2 id="设置">设置<a hidden class="anchor" aria-hidden="true" href="#设置">#</a></h2>
 <h3 id="hugo">Hugo<a hidden class="anchor" aria-hidden="true" href="#hugo">#</a></h3>
 <p>PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 <a href="https://www.sulvblog.cn/posts/blog/build_hugo/">这篇文章</a> 。</p>
-<p>Google Analytics 的 <code>SiteVerificationTag</code> 要去 Google Analytics 的 <strong>管理</strong> 创建 *
-媒体资源* 后，再在 <strong>媒体资源</strong> 下面的 <strong>数据流</strong> ，把网站点进去，就可以看到 <strong>衡量
+<p>Google Analytics 的 <code>SiteVerificationTag</code> 要去 Google Analytics 的 <strong>管理</strong> 创建
+<strong>媒体资源</strong> 后，再在 <strong>媒体资源</strong> 下面的 <strong>数据流</strong> ，把网站点进去，就可以看到 <strong>衡量
 ID</strong> 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦截软件给拦截了。</p>
 <p>关于 favicon ，推荐一个网站 <a href="https://favicon.io/">favicon.io</a> 。</p>
 <p>另外，像 tags 和 categories 这样的内置的页面，名字没有办法通过设置改成中文的，除非改代码。这个看看上面提到的样例网站的<a href="https://github.com/xyming108/sulv-hugo-papermod"> 源码</a> 就知道了。</p>
@@ -343,14 +327,15 @@ ID</strong> 了。这个 ID 就是我们需要的。如果发现点击进去没�
 <p>在 blog 里面新建一个 org 文件夹，专门放 org 文件（ Hugo 当然可以解析 org 文件，但效果显然没有 markdown 好）。</p>
 <p>写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 <code>hugo</code> 补全，用 <code>&lt;tab&gt;</code>
 来在各个属性间跳转。</p>
-<p>写好之后，保存，在终端里用 <code>hugo</code> 命令生成网页。</p>
+<p>写好之后，保存，用 <code>C-c C-e H h</code> 将其转换为 markdown 文件，然后就可以用 <code>hugo server</code> 看看效果了。再用 <code>hugo</code> 命令生成网页。</p>
+<p>关于使用 github pages 来创建网站，可以看 <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">这个</a> 。</p>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://weichzh.github.io/tags/%E6%8A%80%E6%9C%AF/">:技术:</a></li>
+      <li><a href="https://weichzh.github.io/tags/%E6%8A%80%E6%9C%AF/">技术</a></li>
     </ul>
 <nav class="paginav">
   <a class="next" href="https://weichzh.github.io/posts/%E8%A8%80%E8%AF%AD%E9%81%93%E6%96%AD-%E9%9D%9E%E5%8E%BB%E6%9D%A5%E4%BB%8A/">
@@ -363,7 +348,7 @@ ID</strong> 了。这个 ID 就是我们需要的。如果发现点击进去没�
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share 用 Hugo 搭建博客 | 用 org-mode 写作 on twitter"
-        href="https://twitter.com/intent/tweet/?text=%e7%94%a8%20Hugo%20%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%20%7c%20%e7%94%a8%20org-mode%20%e5%86%99%e4%bd%9c&amp;url=https%3a%2f%2fweichzh.github.io%2fposts%2fbuild-blog-with-hugo%2f&amp;hashtags=%3a%e6%8a%80%e6%9c%af%3a">
+        href="https://twitter.com/intent/tweet/?text=%e7%94%a8%20Hugo%20%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2%20%7c%20%e7%94%a8%20org-mode%20%e5%86%99%e4%bd%9c&amp;url=https%3a%2f%2fweichzh.github.io%2fposts%2fbuild-blog-with-hugo%2f&amp;hashtags=%e6%8a%80%e6%9c%af">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
