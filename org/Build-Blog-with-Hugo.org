@@ -58,8 +58,8 @@ git submodule update --remote --merge
 ** Hugo
 PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 [[https://www.sulvblog.cn/posts/blog/build_hugo/][这篇文章]] 。
 
-Google Analytics 的 =SiteVerificationTag= 要去 Google Analytics 的 *管理* 创建 *
-媒体资源* 后，再在 *媒体资源* 下面的 *数据流* ，把网站点进去，就可以看到 *衡量
+Google Analytics 的 =SiteVerificationTag= 要去 Google Analytics 的 *管理* 创建
+*媒体资源* 后，再在 *媒体资源* 下面的 *数据流* ，把网站点进去，就可以看到 *衡量
 ID* 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦
 截软件给拦截了。
 
@@ -95,4 +95,5 @@ $0
 写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 =hugo= 补全，用 ~<tab>~
 来在各个属性间跳转。
 
-写好之后，保存，在终端里用 =hugo= 命令生成网页。
+写好之后，保存，用 ~C-c C-e H h~ 将其转换为 markdown 文件，然后就可以用 =hugo
+server= 看看效果了。再用 =hugo= 命令生成网页。
