@@ -2,14 +2,14 @@
 title = "用 Hugo 搭建博客 | 用 org-mode 写作"
 author = ["Weichzh"]
 date = 2023-03-15T20:23:00+08:00
-lastmod = 2023-03-15T22:18:50+08:00
+lastmod = 2023-03-16T08:34:29+08:00
 tags = ["技术"]
 draft = false
 +++
 
 ## 导言 {#导言}
 
-介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。
+介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。
 
 
 ## 目标 {#目标}
@@ -32,8 +32,8 @@ draft = false
 然后要在 config.el 文件中，把 `org-directory` 等变量设置好。具体可以看看一些介绍
 Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问题，看 [Emacs 相关中文问题以及解决方案](https://github.com/hick/emacs-chinese) 来解决这些问题。我以后可能会写一篇关于 org-mode 的文章，因为现在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。
 
-在把诸如 Org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 **享受** Emacs
-和 Orgmode 的强大了。
+在把诸如 org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 **享受**
+Emacs和 org-mode 的强大了。
 
 
 ## 创建网站 {#创建网站}
@@ -47,10 +47,10 @@ hugo new site <Your blog name> -f yml
 之所以用 yml 作为博客的配置文件格式，是因为我要用 [PaperMod](https://github.com/adityatelange/hugo-PaperMod/) 作为博客的主题。下面开始导入主题。
 
 ```shell
-cd blog # 进入你的博客文件夹
-git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库
-git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-git submodule update --init --recursive
+cd blog # 进入你的博客文件夹git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库
+git submodule add --depth=1
+https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod git submodule
+update --init --recursive
 ```
 
 如果之后要升级主题，则使用：

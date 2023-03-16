@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>用 Hugo 搭建博客 | 用 org-mode 写作 | 微尘众的博客</title>
 <meta name="keywords" content="技术">
-<meta name="description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走">
+<meta name="description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走">
 <meta name="author" content="Weichzh">
 <link rel="canonical" href="https://weichzh.github.io/posts/build-blog-with-hugo/">
 <meta name="google-site-verification" content="G-SLEQ73N24W">
@@ -69,15 +69,15 @@ if (!doNotTrack) {
 }
 </script>
 <meta property="og:title" content="用 Hugo 搭建博客 | 用 org-mode 写作" />
-<meta property="og:description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走" />
+<meta property="og:description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://weichzh.github.io/posts/build-blog-with-hugo/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-15T20:23:00+08:00" />
-<meta property="article:modified_time" content="2023-03-15T22:18:50+08:00" /><meta property="og:site_name" content="微尘众的博客" />
+<meta property="article:modified_time" content="2023-03-16T08:34:29+08:00" /><meta property="og:site_name" content="微尘众的博客" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用 Hugo 搭建博客 | 用 org-mode 写作"/>
-<meta name="twitter:description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走"/>
+<meta name="twitter:description" content="导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走"/>
 
 
 <script type="application/ld+json">
@@ -106,15 +106,15 @@ if (!doNotTrack) {
   "@type": "BlogPosting",
   "headline": "用 Hugo 搭建博客 | 用 org-mode 写作",
   "name": "用 Hugo 搭建博客 | 用 org-mode 写作",
-  "description": "导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走",
+  "description": "导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走",
   "keywords": [
     "技术"
   ],
-  "articleBody": "导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。\n目标 希望这次就能做到，写作方便，网站功能齐全，简洁雅观。这其实意味着要更多的自定义，但幸好有珠玉在前，虽然还是走了不少弯路。\n准备阶段 安装 Hugo 就不用多说了。Emacs 的配置才是重点。\n我使用的是 Doom Emacs 配置，需要在 init.el 文件里找到 org ，然后改成：\n1 (org +brain +dragdrop +roam2 +pretty +hugo +gnuplot +jupyter +pandoc +pomodoro) 其中 +hugo 这个是必须加的，其余的，加不加由你，我反正是加了。\n然后要在 config.el 文件中，把 org-directory 等变量设置好。具体可以看看一些介绍 Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问题，看 Emacs 相关中文问题以及解决方案 来解决这些问题。我以后可能会写一篇关于 org-mode 的文章，因为现在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。\n在把诸如 Org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 享受 Emacs 和 Orgmode 的强大了。\n创建网站 首先在终端里输入：\n1 hugo new site -f yml 之所以用 yml 作为博客的配置文件格式，是因为我要用 PaperMod 作为博客的主题。下面开始导入主题。\n1 2 3 4 cd blog # 进入你的博客文件夹 git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库 git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod git submodule update --init --recursive 如果之后要升级主题，则使用：\n1 git submodule update --remote --merge 然后使用 hugo server -D 打开网站预览。\n设置 Hugo PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 这篇文章 。\nGoogle Analytics 的 SiteVerificationTag 要去 Google Analytics 的 管理 创建 媒体资源 后，再在 媒体资源 下面的 数据流 ，把网站点进去，就可以看到 衡量 ID 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦截软件给拦截了。\n关于 favicon ，推荐一个网站 favicon.io 。\n另外，像 tags 和 categories 这样的内置的页面，名字没有办法通过设置改成中文的，除非改代码。这个看看上面提到的样例网站的 源码 就知道了。\nOrg-mode 看 ox-hugo 的文档。可以说，我碰到的问题这个文档都能解决。\n创建 front matter 当然不用自己手打，有 Yasnippet 这个神器。我的 snippet 如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 # key: hugo # name: hugo # -- #+HUGO_BASE_DIR: ../ #+TITLE: $1 #+DATE: `(format-time-string \"[%Y-%m-%d %a %H:%M]\")` #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: $2 #+HUGO_DRAFT: false #+AUTHOR: Weichzh #+TOC: headlines 3 $0 写作 在 blog 里面新建一个 org 文件夹，专门放 org 文件（ Hugo 当然可以解析 org 文件，但效果显然没有 markdown 好）。\n写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 hugo 补全，用 来在各个属性间跳转。\n写好之后，保存，用 C-c C-e H h 将其转换为 markdown 文件，然后就可以用 hugo server 看看效果了。再用 hugo 命令生成网页。\n关于使用 github pages 来创建网站，可以看 这个 。\n",
-  "wordCount" : "997",
+  "articleBody": "导言 介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。\n目标 希望这次就能做到，写作方便，网站功能齐全，简洁雅观。这其实意味着要更多的自定义，但幸好有珠玉在前，虽然还是走了不少弯路。\n准备阶段 安装 Hugo 就不用多说了。Emacs 的配置才是重点。\n我使用的是 Doom Emacs 配置，需要在 init.el 文件里找到 org ，然后改成：\n1 (org +brain +dragdrop +roam2 +pretty +hugo +gnuplot +jupyter +pandoc +pomodoro) 其中 +hugo 这个是必须加的，其余的，加不加由你，我反正是加了。\n然后要在 config.el 文件中，把 org-directory 等变量设置好。具体可以看看一些介绍 Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问题，看 Emacs 相关中文问题以及解决方案 来解决这些问题。我以后可能会写一篇关于 org-mode 的文章，因为现在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。\n在把诸如 org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 享受 Emacs和 org-mode 的强大了。\n创建网站 首先在终端里输入：\n1 hugo new site -f yml 之所以用 yml 作为博客的配置文件格式，是因为我要用 PaperMod 作为博客的主题。下面开始导入主题。\n1 2 3 4 cd blog # 进入你的博客文件夹git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库 git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod git submodule update --init --recursive 如果之后要升级主题，则使用：\n1 git submodule update --remote --merge 然后使用 hugo server -D 打开网站预览。\n设置 Hugo PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 这篇文章 。\nGoogle Analytics 的 SiteVerificationTag 要去 Google Analytics 的 管理 创建 媒体资源 后，再在 媒体资源 下面的 数据流 ，把网站点进去，就可以看到 衡量 ID 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦截软件给拦截了。\n关于 favicon ，推荐一个网站 favicon.io 。\n另外，像 tags 和 categories 这样的内置的页面，名字没有办法通过设置改成中文的，除非改代码。这个看看上面提到的样例网站的 源码 就知道了。\nOrg-mode 看 ox-hugo 的文档。可以说，我碰到的问题这个文档都能解决。\n创建 front matter 当然不用自己手打，有 Yasnippet 这个神器。我的 snippet 如下：\n1 2 3 4 5 6 7 8 9 10 11 12 13 # key: hugo # name: hugo # -- #+HUGO_BASE_DIR: ../ #+TITLE: $1 #+DATE: `(format-time-string \"[%Y-%m-%d %a %H:%M]\")` #+HUGO_AUTO_SET_LASTMOD: t #+HUGO_TAGS: $2 #+HUGO_DRAFT: false #+AUTHOR: Weichzh #+TOC: headlines 3 $0 写作 在 blog 里面新建一个 org 文件夹，专门放 org 文件（ Hugo 当然可以解析 org 文件，但效果显然没有 markdown 好）。\n写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 hugo 补全，用 来在各个属性间跳转。\n写好之后，保存，用 C-c C-e H h 将其转换为 markdown 文件，然后就可以用 hugo server 看看效果了。再用 hugo 命令生成网页。\n关于使用 github pages 来创建网站，可以看 这个 。\n",
+  "wordCount" : "1003",
   "inLanguage": "zh",
   "datePublished": "2023-03-15T20:23:00+08:00",
-  "dateModified": "2023-03-15T22:18:50+08:00",
+  "dateModified": "2023-03-16T08:34:29+08:00",
   "author":[{
     "@type": "Person",
     "name": "Weichzh"
@@ -233,7 +233,7 @@ if (!doNotTrack) {
     <h1 class="post-title">
       用 Hugo 搭建博客 | 用 org-mode 写作
     </h1>
-    <div class="post-meta"><span title='2023-03-15 20:23:00 +0800 CST'>三月 15, 2023</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;997 字&nbsp;·&nbsp;Weichzh
+    <div class="post-meta"><span title='2023-03-15 20:23:00 +0800 CST'>三月 15, 2023</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;1003 字&nbsp;·&nbsp;Weichzh
 
 </div>
   </header> <div class="toc">
@@ -262,7 +262,7 @@ if (!doNotTrack) {
 </div>
 
   <div class="post-content"><h2 id="导言">导言<a hidden class="anchor" aria-hidden="true" href="#导言">#</a></h2>
-<p>介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 Orgmode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。</p>
+<p>介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文章也是数不胜数。本文章旨在为将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。</p>
 <h2 id="目标">目标<a hidden class="anchor" aria-hidden="true" href="#目标">#</a></h2>
 <p>希望这次就能做到，写作方便，网站功能齐全，简洁雅观。这其实意味着要更多的自定义，但幸好有珠玉在前，虽然还是走了不少弯路。</p>
 <h2 id="准备阶段">准备阶段<a hidden class="anchor" aria-hidden="true" href="#准备阶段">#</a></h2>
@@ -279,8 +279,8 @@ if (!doNotTrack) {
 </div><p>其中 <code>+hugo</code> 这个是必须加的，其余的，加不加由你，我反正是加了。</p>
 <p>然后要在 config.el 文件中，把 <code>org-directory</code> 等变量设置好。具体可以看看一些介绍
 Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问题，看 <a href="https://github.com/hick/emacs-chinese">Emacs 相关中文问题以及解决方案</a> 来解决这些问题。我以后可能会写一篇关于 org-mode 的文章，因为现在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。</p>
-<p>在把诸如 Org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 <strong>享受</strong> Emacs
-和 Orgmode 的强大了。</p>
+<p>在把诸如 org-capture 等设置好后，还能坚持下来的，那么恭喜，接下来就是 <strong>享受</strong>
+Emacs和 org-mode 的强大了。</p>
 <h2 id="创建网站">创建网站<a hidden class="anchor" aria-hidden="true" href="#创建网站">#</a></h2>
 <p>首先在终端里输入：</p>
 <div class="highlight"><div class="chroma">
@@ -300,10 +300,10 @@ Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问�
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> blog <span class="c1"># 进入你的博客文件夹</span>
-</span></span><span class="line"><span class="cl">git init <span class="c1"># 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库</span>
-</span></span><span class="line"><span class="cl">git submodule add --depth<span class="o">=</span><span class="m">1</span> https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-</span></span><span class="line"><span class="cl">git submodule update --init --recursive
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> blog <span class="c1"># 进入你的博客文件夹git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库</span>
+</span></span><span class="line"><span class="cl">git submodule add --depth<span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod git submodule
+</span></span><span class="line"><span class="cl">update --init --recursive
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果之后要升级主题，则使用：</p>
