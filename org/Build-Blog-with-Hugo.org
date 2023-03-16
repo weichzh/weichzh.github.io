@@ -84,7 +84,6 @@ ID* 了。这个 ID 就是我们需要的。如果发现点击进去没反应，
 #+HUGO_TAGS: $2
 #+HUGO_DRAFT: false
 #+AUTHOR: Weichzh
-#+TOC: headlines 3
 
 $0
 #+END_SRC
