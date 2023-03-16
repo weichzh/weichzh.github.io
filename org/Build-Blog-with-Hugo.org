@@ -80,6 +80,7 @@ $0
 #+hugo: more
 #+END_SRC
 
+当然，还有一个 [[https://github.com/masasam/emacs-easy-hugo][easy-hugo]] 包，稍微尝试了一下，很好用。可以一试。
 * 写作
 在 blog 里面新建一个 org 文件夹，专门放 org 文件（ Hugo 当然可以解析 org 文件，但效果显然没有 markdown 好）。
 
@@ -90,4 +91,4 @@ $0
 关于使用 github pages 来创建网站，可以看 [[https://gohugo.io/hosting-and-deployment/hosting-on-github/][这个]] 。
 
 * 后记
-这篇文章说实话写得有些语焉不详，但我觉得也确实没有必要再把别人已经做过的工作重新做一遍。如果能有有一些新的东西能够帮助到以后的我和读者，那就相当可以了。
+这篇文章说实话写得有些语焉不详，但我觉得也确实没有必要再把别人已经做过的工作重新做一遍。如果能有一些新的东西能够帮助到以后的我和读者，那就相当可以了。
