@@ -7,13 +7,10 @@
 #+AUTHOR: Weichzh
 
 * 导言
-介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文
-章也是数不胜数。本文章旨在将自己搭建博客的过程记录下来，一则避免未来走弯路，二则
-也是为其他有类似需求的用户踩雷。
+介绍如何使用 Hugo 搭建博客的文章多如牛毛，即便是专门讲 org-mode 与 Hugo 结合的文章也是数不胜数。本文章旨在将自己搭建博客的过程记录下来，一则避免未来走弯路，二则也是为其他有类似需求的用户踩雷。
 
 * 目标
-希望这次就能做到，写作方便，网站功能齐全，简洁雅观。这其实意味着要更多的自定义，
-但幸好有珠玉在前，虽然还是走了不少弯路。
+希望这次就能做到，写作方便，网站功能齐全，简洁雅观。这其实意味着要更多的自定义，但幸好有珠玉在前，虽然还是走了不少弯路。
 
 * 准备阶段
 安装 Hugo 就不用多说了。Emacs 的配置才是重点。
@@ -25,13 +22,9 @@
 
 其中 =+hugo= 这个是必须加的，其余的，加不加由你，我反正是加了。
 
-然后要在 config.el 文件中，把 =org-directory= 等变量设置好。具体可以看看一些介绍
-Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问题，看 [[https://github.com/hick/emacs-chinese][Emacs 相关中文
-问题以及解决方案]] 来解决这些问题。我以后可能会写一篇关于 org-mode 的文章，因为现
-在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。
+然后要在 config.el 文件中，把 =org-directory= 等变量设置好。具体可以看看一些介绍 Doom Emacs 和 org-mode 的文章。以及为了解决一些中文相关的问题，看 [[https://github.com/hick/emacs-chinese][Emacs 相关中文问题以及解决方案]] 来解决这些问题。我以后可能会写一篇关于 org-mode 的文章，因为现在文章多少都有些不太合适，有些是复杂了，有些是过于简单了。
 
-在把诸如 org-capture 等包设置好后，还能坚持下来的，那么恭喜，接下来就是 *享受*
-Emacs和 org-mode 的强大了。
+在把诸如 org-capture 等包设置好后，还能坚持下来的，那么恭喜，接下来就是 *享受* Emacs和 org-mode 的强大了。
 
 * 创建网站
 首先在终端里输入：
@@ -39,8 +32,7 @@ Emacs和 org-mode 的强大了。
 hugo new site <Your blog name> -f yml
 #+END_SRC
 
-之所以用 yml 作为博客的配置文件格式，是因为我要用 [[https://github.com/adityatelange/hugo-PaperMod/][PaperMod]] 作为博客的主题。下面
-开始导入主题。
+之所以用 yml 作为博客的配置文件格式，是因为我要用 [[https://github.com/adityatelange/hugo-PaperMod/][PaperMod]] 作为博客的主题。下面开始导入主题。
 #+BEGIN_SRC shell
 cd blog # 进入你的博客文件夹git init # 我将使用 git submodule 作为导入主题的方式，所以需要先将博客转为 git 仓库
 git submodule add --depth=1
@@ -57,17 +49,11 @@ git submodule update --remote --merge
 
 * 设置
 ** Hugo
-PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 [[https://www.sulvblog.cn/posts/blog/build_hugo/][这篇文章]] 。
-
-Google Analytics 的 =SiteVerificationTag= 要去 Google Analytics 的 *管理* 创建
-*媒体资源* 后，再在 *媒体资源* 下面的 *数据流* ，把网站点进去，就可以看到 *衡量
-ID* 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦
-截软件给拦截了。
+PaperMod 官方就有一个配置样例。但这个样例不是太好。可以看看 [[https://www.sulvblog.cn/posts/blog/build_hugo/][这篇文章]] 。Google Analytics 的 =SiteVerificationTag= 要去 Google Analytics 的 *管理* 创建 *媒体资源* 后，再在 *媒体资源* 下面的 *数据流* ，把网站点进去，就可以看到 *衡量 ID* 了。这个 ID 就是我们需要的。如果发现点击进去没反应，可能是 Adguard 之类的拦截软件给拦截了。
 
 关于 favicon ，推荐一个网站 [[https://favicon.io/][favicon.io]] 。
 
-另外，像 tags 和 categories 这样的内置的页面，名字没有办法通过设置改成中文的，除
-非改代码。这个看看上面提到的样例网站的[[https://github.com/xyming108/sulv-hugo-papermod][ 源码]] 就知道了。
+另外，像 tags 和 categories 这样的内置的页面，名字没有办法通过设置改成中文的，除非改代码。这个看看上面提到的样例网站的[[https://github.com/xyming108/sulv-hugo-papermod][ 源码]] 就知道了。
 
 ** Org-mode
 看 [[https://ox-hugo.scripter.co/][ox-hugo]] 的文档。可以说，我碰到的问题这个文档都能解决。
@@ -89,13 +75,10 @@ $0
 #+END_SRC
 
 * 写作
-在 blog 里面新建一个 org 文件夹，专门放 org 文件（ Hugo 当然可以解析 org 文件，
-但效果显然没有 markdown 好）。
+在 blog 里面新建一个 org 文件夹，专门放 org 文件（ Hugo 当然可以解析 org 文件，但效果显然没有 markdown 好）。
 
-写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 =hugo= 补全，用 ~<tab>~
-来在各个属性间跳转。
+写作时，首先在 org 文件夹里新建一个 org 文件，然后敲出 =hugo= 补全，用 ~<tab>~ 来在各个属性间跳转。
 
-写好之后，保存，用 ~C-c C-e H h~ 将其转换为 markdown 文件，然后就可以用 =hugo
-server= 看看效果了。再用 =hugo= 命令生成网页。
+写好之后，保存，用 ~C-c C-e H h~ 将其转换为 markdown 文件，然后就可以用 =hugo server= 看看效果了。再用 =hugo= 命令生成网页。
 
 关于使用 github pages 来创建网站，可以看 [[https://gohugo.io/hosting-and-deployment/hosting-on-github/][这个]] 。
